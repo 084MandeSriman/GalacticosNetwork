@@ -982,13 +982,13 @@ export default function EnhancedCloudSaaS() {
       {/* HERO SECTION */}
       <section style={styles.hero} className="hero-section">
         <div style={styles.heroContent} className="hero-content">
-          <div style={styles.heroTag}>✨ CLOUD SAAS SOLUTIONS</div>
+          <div style={styles.heroTag}>✨ ENTERPRISE CLOUD SaaS TRANSFORMATION</div>
           <h1 style={styles.heroTitle}>
-            Next-Gen Cloud Platforms for Enterprise Excellence
+            Transform SaaS platforms into<br />
+            business value engines
           </h1>
           <p style={styles.heroSubtitle}>
-            Accelerate your digital transformation with AI-powered cloud solutions, 
-            global support infrastructure, and enterprise-grade security.
+            We help enterprises adopt, integrate, and optimize SaaS ecosystems—aligning applications, data, and workflows to accelerate innovation, improve operational intelligence, and deliver measurable outcomes.
           </p>
         </div>
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", animation: "fadeInUp 1.2s ease-out" }} className="svg-container">
@@ -1006,12 +1006,16 @@ export default function EnhancedCloudSaaS() {
         </p>
 
         <p style={styles.paragraph}>
-          We deliver cutting-edge cloud platforms that combine enterprise-grade reliability 
-          with startup agility. Our solutions power over 500+ global enterprises across 
-          finance, healthcare, and technology sectors with 99.99% uptime and 24/7 support.
+          We enable enterprises to move beyond isolated SaaS deployments to a unified, business‑aligned digital platform—where applications, data, and processes operate as a single value chain.
+        </p>
+        <p style={styles.paragraph}>
+          Our platform‑led approach ensures continuous adoption, real‑time insights, and measurable business impact across finance, life sciences, and global enterprises.
         </p>
 
         {/* LOGOS SECTION - Using reliable external URLs */}
+        <h3 style={{ fontSize: "28px", fontWeight: 700, color: "#667eea", marginBottom: "30px", textAlign: "center" }}>
+          Strategic SaaS ecosystems we transform and optimize
+        </h3>
         <div style={styles.logoGrid} className="logo-grid">
           <div
             style={{
@@ -1076,9 +1080,7 @@ export default function EnhancedCloudSaaS() {
           <div>
             <h2 style={styles.headingWhite}>💊 Veeva Commercial Cloud</h2>
             <p style={styles.paragraphWhite}>
-              Transform life sciences commercial operations with our Veeva-certified 
-              expertise. We deliver end-to-end Veeva CRM, Vault, and Engage solutions 
-              that drive 40% faster market adoption.
+              We help life sciences organizations transform Veeva from a system of record into a real‑time commercial intelligence platform—connecting customer engagement, data, and analytics to accelerate market adoption and improve field productivity.
             </p>
 
             <div style={styles.cardGrid} className="card-grid">
@@ -1114,15 +1116,15 @@ export default function EnhancedCloudSaaS() {
 
         <div style={{marginTop: "80px", animation: "fadeInUp 1.2s ease-out"}}>
           <h3 style={{fontSize: "28px", fontWeight: 700, marginBottom: "30px", color: "#fff"}}>
-            Why Top Pharma Companies Choose Us:
+            Business outcomes we enable
           </h3>
 
           {[
-            "150+ certified Veeva consultants globally",
-            "AI-powered CRM optimization",
-            "Multi-cloud integration expertise",
-            "Regulatory compliance (FDA, GDPR, HIPAA)",
-            "Agile delivery with 95% client satisfaction"
+            "Commercial data unified across the engagement lifecycle",
+            "AI‑driven next‑best‑action for field teams",
+            "Compliant, scalable global operating model",
+            "Faster product launch and market penetration",
+            "Continuous adoption and value realization"
           ].map((item, index) => (
             <div
               key={index}
@@ -1149,9 +1151,7 @@ export default function EnhancedCloudSaaS() {
           <div>
             <h2 style={styles.heading}>📊 Workday Enterprise Suite</h2>
             <p style={styles.paragraph}>
-              Unlock the full potential of Workday with our comprehensive implementation 
-              and managed services. From HCM to Financials, we ensure seamless digital 
-              transformation for modern enterprises.
+              We transform Workday into a continuous enterprise decision platform—connecting finance, workforce, and planning data to enable real‑time insights, intelligent automation, and agile business operations.
             </p>
 
             <div style={styles.iconGrid} className="icon-grid">
@@ -1183,15 +1183,15 @@ export default function EnhancedCloudSaaS() {
 
         <div style={{marginTop: "80px", animation: "fadeInUp 1.2s ease-out"}}>
           <h3 style={{fontSize: "28px", fontWeight: 700, color: "#667eea", marginBottom: "30px"}}>
-            Post-Implementation Excellence:
+            Enterprise value realization
           </h3>
 
           {[
-            "Intelligent automation & RPA integration",
-            "Real-time analytics dashboard",
-            "Global payroll & compliance",
-            "Continuous optimization & innovation",
-            "24/7 premium support SLA"
+            "Real‑time finance and workforce intelligence",
+            "AI‑enabled planning and forecasting",
+            "Global operating model standardization",
+            "Continuous process optimization",
+            "Experience‑driven employee lifecycle"
           ].map((item, index) => (
             <div
               key={index}
@@ -1225,11 +1225,11 @@ export default function EnhancedCloudSaaS() {
               The Ultimate Cloud Advantage
             </h3>
             {[
-              "99.99% uptime SLA guarantee",
-              "Zero-trust security architecture",
-              "Global edge network - 50ms latency",
-              "AI-driven resource optimization",
-              "Seamless hybrid cloud integration"
+              "Unified SaaS operating model aligned to value streams",
+              "Data‑driven decision intelligence across platforms",
+              "Embedded governance, risk, and compliance automation",
+              "Experience‑centric digital workflows",
+              "Continuous innovation through platform analytics"
             ].map((item, index) => (
               <div
                 key={index}
@@ -1251,11 +1251,10 @@ export default function EnhancedCloudSaaS() {
       {/* CTA SECTION */}
       <section style={styles.ctaSection}>
         <h2 style={styles.ctaTitle}>
-          Ready to Transform Your Enterprise?
+          Transform your SaaS landscape into a continuous value platform
         </h2>
         <p style={{fontSize: "20px", marginBottom: "50px", lineHeight: 1.8, color: "#e0e7ff"}}>
-          Join 500+ industry leaders who've accelerated their cloud journey with us.
-          Get your personalized roadmap today.
+          Partner with our enterprise SaaS transformation specialists to align applications, data, and business processes for measurable outcomes and sustained innovation.
         </p>
 
         <div style={styles.ctaButtons} className="cta-buttons">

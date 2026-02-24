@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Modern animated orbital illustration
 const OrbitalIllustration = () => (
@@ -138,6 +139,8 @@ const OrbitalIllustration = () => (
 );
 
 export default function QualityEngineering() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const elements = document.querySelectorAll(".fade-up");
     if (!elements.length) return;
@@ -180,12 +183,10 @@ export default function QualityEngineering() {
             </span>
 
             <h1 style={{ fontSize: 46, lineHeight: 1.06, margin: "18px 0 12px", fontWeight: 800, color: "#f8fafc" }}>
-              Deliver resilient software experiences
+              Engineer quality across the digital value chain
               <br />
-              with automation, performance & observability
+              through intelligent automation, AI-driven assurance, and continuous observability
             </h1>
-
-            {/* keep only heading in hero per request (no buttons/extra paragraph) */}
           </div>
 
           <div style={{ flex: "0 0 420px", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -212,14 +213,14 @@ export default function QualityEngineering() {
             className="fade-up"
             style={{ fontSize: 22, fontWeight: 600, color: "#222", maxWidth: 800, lineHeight: 1.6, opacity: 0, transform: "translateY(40px)", transition: "all 0.8s ease 0.2s" }}
           >
-            Develop and maintain high-quality products with advanced, AI-driven quality engineering frameworks.
+            Shift quality from a testing phase to a continuous, intelligent enterprise capability.
           </h3>
 
           <p
             className="fade-up"
             style={{ marginTop: 25, lineHeight: 1.8, color: "#555", fontSize: 17, maxWidth: 900, opacity: 0, transform: "translateY(40px)", transition: "all 0.8s ease 0.4s" }}
           >
-            Our software quality engineering services ensure the highest level of user satisfaction and flawless performance for enterprise applications and digital platforms. We integrate advanced testing methodologies, automation frameworks, and robust QA governance models to continuously improve software reliability, performance, and scalability.
+            We embed quality engineering across the entire software and platform lifecycle—enabling faster releases, resilient user experiences, and data-driven operational confidence. Our AI-powered automation, performance intelligence, and quality governance models transform QA into a measurable business value function.
           </p>
         </div>
       </section>
@@ -230,7 +231,12 @@ export default function QualityEngineering() {
           <h2 style={{ color: "#0b5fa5", marginBottom: 40, fontSize: 34, fontWeight: 800 }}>Overview</h2>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
-            {["25+ years delivering excellence in quality engineering", "Analytics-led testing strategy from manual to automation", "Continuous innovation in accelerators & frameworks", "Business-aligned engagement & KPI-driven outcomes"].map((item, index) => (
+            {[
+              "Quality engineered as a continuous business capability",
+              "AI-driven automation for speed, scale, and release confidence",
+              "Shift-left, shift-right and autonomous testing models",
+              "Outcome-based quality aligned to customer experience and revenue impact"
+            ].map((item, index) => (
               <div
                 key={index}
                 style={{ position: "relative", padding: 30, borderRadius: 14, background: "#fff", border: "1px solid rgba(11,95,165,0.06)", transition: "all 0.32s ease" }}
@@ -244,155 +250,151 @@ export default function QualityEngineering() {
           </div>
         </div>
       </section>
-{/* EXPERTISE & SERVICES */}
-<section
-  style={{
-    position: "relative",
-    padding: "120px 6%",
-    background:
-      "linear-gradient(135deg, #f9fbff 0%, #f4f8ff 50%, #ffffff 100%)",
-    overflow: "hidden",
-  }}
->
-  {/* Background Accent Glow */}
-  <div
-    style={{
-      position: "absolute",
-      width: "500px",
-      height: "500px",
-      background:
-        "radial-gradient(circle, rgba(23,105,170,0.08), transparent 70%)",
-      top: "-150px",
-      right: "-150px",
-      borderRadius: "50%",
-      animation: "floatSlow 18s ease-in-out infinite",
-    }}
-  />
 
-  <div style={{ maxWidth: "1200px", margin: "0 auto", position: "relative" }}>
-    <h2
-      style={{
-        textAlign: "center",
-        marginBottom: "60px",
-        fontSize: "34px",
-        fontWeight: "800",
-        color: "#0b5fa5",
-      }}
-    >
-      Expertise & Services
-    </h2>
-
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-        gap: "30px",
-      }}
-    >
-      {[
-        {
-          title: "Our Expertise",
-          content:
-            "Functional, Performance, Automation, Integration, Security, Migration, Usability, Network & DevOps testing",
-          color: "#1fa971",
-        },
-        {
-          title: "What We Test",
-          content:
-            "Enterprise Applications, Web & Mobility, Products & Platforms, DW/BI, Cloud SaaS, ERP & CRM, APIs & Microservices, IoT & Blockchain",
-          color: "#9b3c8c",
-        },
-        {
-          title: "Domain",
-          content:
-            "Healthcare, Insurance, Manufacturing, Financial Services, Banking, E-Commerce and more with strong domain-driven QA coverage.",
-          color: "#1769aa",
-        },
-      ].map((item, index) => (
+      {/* EXPERTISE & SERVICES */}
+      <section
+        style={{
+          position: "relative",
+          padding: "120px 6%",
+          background: "linear-gradient(135deg, #f9fbff 0%, #f4f8ff 50%, #ffffff 100%)",
+          overflow: "hidden",
+        }}
+      >
+        {/* Background Accent Glow */}
         <div
-          key={index}
           style={{
-            position: "relative",
-            padding: "40px 30px",
-            borderRadius: "20px",
-            background: "rgba(255,255,255,0.7)",
-            backdropFilter: "blur(12px)",
-            border: `1px solid ${item.color}22`,
-            overflow: "hidden",
-            transition: "all 0.4s ease",
-            cursor: "pointer",
+            position: "absolute",
+            width: "500px",
+            height: "500px",
+            background: "radial-gradient(circle, rgba(23,105,170,0.08), transparent 70%)",
+            top: "-150px",
+            right: "-150px",
+            borderRadius: "50%",
+            animation: "floatSlow 18s ease-in-out infinite",
           }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "translateY(-12px)";
-            e.currentTarget.style.boxShadow =
-              `0 20px 40px ${item.color}33`;
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "translateY(0px)";
-            e.currentTarget.style.boxShadow = "none";
-          }}
-        >
-          {/* Icon Circle */}
-          <div
+        />
+
+        <div style={{ maxWidth: "1200px", margin: "0 auto", position: "relative" }}>
+          <h2
             style={{
-              width: "60px",
-              height: "60px",
-              borderRadius: "50%",
-              background: `linear-gradient(135deg, ${item.color}, #ffffff22)`,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#fff",
-              fontWeight: "bold",
-              fontSize: "20px",
-              marginBottom: "20px",
+              textAlign: "center",
+              marginBottom: "60px",
+              fontSize: "34px",
+              fontWeight: "800",
+              color: "#0b5fa5",
             }}
           >
-            0{index + 1}
+            Expertise & Services
+          </h2>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "30px",
+            }}
+          >
+            {[
+              {
+                title: "Quality Engineering Capabilities",
+                content:
+                  "Autonomous test automation, intelligent performance engineering, continuous quality monitoring, DevSecOps assurance, and AI-driven defect prediction.",
+                color: "#1fa971",
+              },
+              {
+                title: "Digital Platforms We Assure",
+                content:
+                  "Enterprise SaaS, cloud-native applications, data & AI platforms, APIs & microservices, ERP & CRM ecosystems, and connected digital products.",
+                color: "#9b3c8c",
+              },
+              {
+                title: "Industry Value Delivered",
+                content:
+                  "Healthcare, financial services, manufacturing, insurance, retail, and digital enterprises—enabling resilient customer journeys and compliant, high-velocity releases.",
+                color: "#1769aa",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                style={{
+                  position: "relative",
+                  padding: "40px 30px",
+                  borderRadius: "20px",
+                  background: "rgba(255,255,255,0.7)",
+                  backdropFilter: "blur(12px)",
+                  border: `1px solid ${item.color}22`,
+                  overflow: "hidden",
+                  transition: "all 0.4s ease",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-12px)";
+                  e.currentTarget.style.boxShadow = `0 20px 40px ${item.color}33`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0px)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                {/* Icon Circle */}
+                <div
+                  style={{
+                    width: "60px",
+                    height: "60px",
+                    borderRadius: "50%",
+                    background: `linear-gradient(135deg, ${item.color}, #ffffff22)`,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#fff",
+                    fontWeight: "bold",
+                    fontSize: "20px",
+                    marginBottom: "20px",
+                  }}
+                >
+                  0{index + 1}
+                </div>
+
+                <h3
+                  style={{
+                    fontSize: "20px",
+                    fontWeight: "700",
+                    marginBottom: "15px",
+                    color: "#222",
+                  }}
+                >
+                  {item.title}
+                </h3>
+
+                <p
+                  style={{
+                    lineHeight: "1.7",
+                    color: "#555",
+                    fontSize: "16px",
+                  }}
+                >
+                  {item.content}
+                </p>
+
+                {/* Animated Shine Effect */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: "-100%",
+                    width: "100%",
+                    height: "100%",
+                    background: "linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent)",
+                    transition: "0.6s",
+                  }}
+                  className="card-shine"
+                />
+              </div>
+            ))}
           </div>
-
-          <h3
-            style={{
-              fontSize: "20px",
-              fontWeight: "700",
-              marginBottom: "15px",
-              color: "#222",
-            }}
-          >
-            {item.title}
-          </h3>
-
-          <p
-            style={{
-              lineHeight: "1.7",
-              color: "#555",
-              fontSize: "16px",
-            }}
-          >
-            {item.content}
-          </p>
-
-          {/* Animated Shine Effect */}
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: "-100%",
-              width: "100%",
-              height: "100%",
-              background:
-                "linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent)",
-              transition: "0.6s",
-            }}
-            className="card-shine"
-          />
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
-      
       {/* CTA */}
       <section className="cta-section">
         <style>{`
@@ -449,13 +451,13 @@ export default function QualityEngineering() {
 
         <div className="cta-container">
           <div className="cta-left">
-            <h2>Talk to our Cloud experts today.</h2>
-            <p>Transform your infrastructure with DAIS™ methodology.</p>
+            <h2>Talk to our Quality Engineering specialists today.</h2>
+            <p>Transform your software quality into a competitive advantage.</p>
           </div>
           <div className="cta-buttons">
-            <button className="cta-btn">Professional Services</button>
-            <button className="cta-btn">Managed Services</button>
-            <button className="cta-btn">Build Your Own</button>
+            <button className="cta-btn">Quality Transformation</button>
+            <button className="cta-btn">Automation & AI Testing</button>
+            <button className="cta-btn">Performance & Resilience</button>
           </div>
           <div className="cta-right">
             <button onClick={() => navigate('/contact')} className="cta-connect">CONNECT NOW</button>

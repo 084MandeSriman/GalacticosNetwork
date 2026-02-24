@@ -11,7 +11,7 @@ export default function ApplicationEngineering() {
     devOps: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
   };
 
-  // Competency data with better icons
+  // Competency data with better icons (unchanged)
   const competencyData = [
     { 
       name: "Micro-services architecture", 
@@ -75,7 +75,7 @@ export default function ApplicationEngineering() {
     }
   ];
 
-  // Industry expertise
+  // Industry expertise (unchanged)
   const industries = [
     "Healthcare", "Insurance", "Manufacturing", "Financial Services", 
     "Technology", "Banking", "E-commerce", "Telecommunications"
@@ -419,7 +419,7 @@ export default function ApplicationEngineering() {
     }
   };
 
-  // Inline styles for animations
+  // Inline styles for animations (unchanged)
   const inlineStyles = `
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
     
@@ -672,18 +672,14 @@ export default function ApplicationEngineering() {
 
   {/* HERO CONTENT */}
   <div className="hero-content fade-in">
-    <div className="hero-badge">Application Engineering</div>
+    <div className="hero-badge">Enterprise Application Engineering & Platform Modernization</div>
 
     <h1 className="hero-title">
-      New-age applications for a <br />
-      <span className="gradient-text">
-        better, brighter digital tomorrow
-      </span>
+      Engineer scalable application platforms that accelerate business value
     </h1>
 
     <p className="hero-desc">
-      Orchestrating specialized engineering practices to deliver scalable,
-      resilient, and future-ready enterprise applications.
+      We modernize legacy portfolios and engineer cloud‑native, API‑first application platforms that improve agility, reduce technical debt, and enable continuous digital innovation.
     </p>
   </div>
 </section>
@@ -695,28 +691,19 @@ export default function ApplicationEngineering() {
           <span className="gradient-text">& modern applications</span>
         </h2>
         <p style={styles.paragraph} className="fade-in delay-1">
-          <span style={styles.highlight}>"The whole is greater than sum of its parts"</span> 
-          {" "}is an aphorism that aptly describes our approach to application engineering. 
-          Like a skilled composer-conductor, we orchestrate various 'practices' dedicated 
-          to specialized areas of software development, to deliver new age enterprise 
-          applications and global platforms.
+          Our application engineering approach brings strategy, architecture, product engineering, and platform operations into a unified value stream—enabling faster releases, higher resilience, and measurable business outcomes.
         </p>
         <p style={styles.paragraph} className="fade-in delay-2">
-          Our services portfolio is designed to enable you achieve outstanding customer 
-          experiences; impressive efficiencies; intended outcomes, thus enabling a 
-          high performance business.
+          We help enterprises shift from project‑based delivery to product‑aligned operating models that improve time‑to‑market, increase release velocity, and optimize total cost of ownership.
         </p>
       </section>
 
       {/* SECRET SAUCE SECTION */}
       <section style={{...styles.secretSauce, ...styles.gradientSection}}>
         <div style={styles.sauceContent}>
-          <h3 style={styles.sauceTitle} className="fade-in">The Secret Sauce</h3>
+          <h3 style={styles.sauceTitle} className="fade-in">Our Differentiation</h3>
           <div style={styles.sauceHighlight} className="fade-in delay-1">
-            The confidence behind our delivery is a passion for Application Engineering 
-            that has been institutionalized through diligently crafted and living 
-            'Practices' in Technology and Delivery; continuously evolving to always 
-            deliver technology's best, to cater to the ever changing business realities.
+            Our differentiation lies in combining product engineering, platform thinking, and automation‑led delivery to continuously modernize applications while they are running—eliminating large transformation cycles and accelerating business change.
           </div>
         </div>
       </section>
@@ -726,7 +713,7 @@ export default function ApplicationEngineering() {
         <div style={styles.competencyPattern}></div>
         <div style={{ position: 'relative', zIndex: 1 }}>
           <h2 style={{ fontSize: "44px", marginBottom: "20px", fontWeight: 800 }} className="fade-in">
-            Competency Areas
+            Application Engineering Platform Capabilities
           </h2>
           <p style={{ 
             fontSize: "18px", 
@@ -735,9 +722,7 @@ export default function ApplicationEngineering() {
             margin: "0 auto 40px",
             lineHeight: 1.6
           }} className="fade-in delay-1">
-            Our competency centers are purposeful instruments towards development of 
-            talent, knowledge systems, and technology solutions that create most 
-            value for the customer.
+            Outcome‑driven capabilities that enable continuous delivery, application resilience, and product‑centric operating models.
           </p>
 
           <div style={styles.competencyGrid} className="competency-grid">
@@ -768,7 +753,7 @@ export default function ApplicationEngineering() {
       {/* EXPERIENCE SECTION */}
       <section style={styles.experience}>
         <h3 style={{ fontSize: "32px", color: "#0f172a", marginBottom: "20px" }} className="fade-in">
-          Honed Over Nearly 3 Decades
+          Proven at enterprise scale
         </h3>
         <p style={{ 
           fontSize: "18px", 
@@ -816,8 +801,7 @@ export default function ApplicationEngineering() {
           textAlign: "center",
           lineHeight: 1.6
         }} className="fade-in delay-1">
-          Our partnerships with best-in-class enterprises across industries enabled us 
-          to develop institutional knowledge and respond with bespoke solutions.
+          Cross‑industry experience in modernizing complex application landscapes and enabling digital business models.
         </p>
         
         <div style={styles.industryGrid}>
@@ -1004,7 +988,7 @@ export default function ApplicationEngineering() {
   </p>
 
   <div style={styles.offeringsGrid} className="offerings-grid">
-    {/* Modern Application Development */}
+    {/* Cloud-Native Product & Platform Engineering */}
     <div
       style={{
         background: "linear-gradient(135deg, #169db7 0%, #0d7a8c 100%)",
@@ -1014,26 +998,19 @@ export default function ApplicationEngineering() {
       className="offerings-card offerings-fade-in offerings-float"
     >
       <div className="offerings-card-content">
-        <h3 className="offerings-title">Modern Application Development</h3>
+        <h3 className="offerings-title">Cloud‑Native Product & Platform Engineering</h3>
         <ul className="offerings-list">
-          {[
-            "Leverage API & Micro Services, Agile/DevOps, Cloud Native, and Analytics",
-            "Build Cloud-first/Mobility-first/API-first business-ready platforms",
-            "Enrich with cutting-edge UX/UI design principles",
-            "Extend capabilities across multiple development stacks",
-            "Global delivery and support infrastructure"
-          ].map((item, index) => (
-            <li key={index} className="offerings-list-item">
-              <div className="offerings-bullet"></div>
-              {item}
-            </li>
-          ))}
+          <li className="offerings-list-item"><span className="offerings-bullet"></span>API‑first, microservices‑based application platforms</li>
+          <li className="offerings-list-item"><span className="offerings-bullet"></span>Product‑aligned engineering and DevSecOps enablement</li>
+          <li className="offerings-list-item"><span className="offerings-bullet"></span>Legacy‑to‑cloud modernization with zero business disruption</li>
+          <li className="offerings-list-item"><span className="offerings-bullet"></span>Experience‑driven application architecture</li>
+          <li className="offerings-list-item"><span className="offerings-bullet"></span>Continuous delivery and release acceleration</li>
         </ul>
       </div>
       <div className="offerings-decor-1"></div>
     </div>
 
-    {/* Application Support & Maintenance */}
+    {/* Application Reliability & Platform Operations */}
     <div
       style={{
         background: "linear-gradient(135deg, #9c3b8e 0%, #7a2c6e 100%)",
@@ -1043,26 +1020,19 @@ export default function ApplicationEngineering() {
       className="offerings-card offerings-fade-in offerings-delay-1 offerings-float"
     >
       <div className="offerings-card-content">
-        <h3 className="offerings-title">Application Support & Maintenance</h3>
+        <h3 className="offerings-title">Application Reliability & Platform Operations</h3>
         <ul className="offerings-list">
-          {[
-            "24×7 global support for business-critical applications",
-            "Proactive monitoring and alerting services",
-            "Comprehensive incident and change management",
-            "Automation for productivity and TCO benefits",
-            "Compliance with data privacy and security standards"
-          ].map((item, index) => (
-            <li key={index} className="offerings-list-item">
-              <div className="offerings-bullet"></div>
-              {item}
-            </li>
-          ))}
+          <li className="offerings-list-item"><span className="offerings-bullet"></span>SRE‑led application reliability and observability</li>
+          <li className="offerings-list-item"><span className="offerings-bullet"></span>AI‑driven incident prediction and auto‑remediation</li>
+          <li className="offerings-list-item"><span className="offerings-bullet"></span>Continuous performance and cost optimization</li>
+          <li className="offerings-list-item"><span className="offerings-bullet"></span>Always‑on resilience for business‑critical platforms</li>
+          <li className="offerings-list-item"><span className="offerings-bullet"></span>Policy‑driven security and compliance automation</li>
         </ul>
       </div>
       <div className="offerings-decor-2"></div>
     </div>
 
-    {/* DAIS™ Application Transformation */}
+    {/* AI‑Led Application Modernization */}
     <div
       style={{
         background: "linear-gradient(135deg, #1769aa 0%, #0d4a7a 100%)",
@@ -1072,21 +1042,13 @@ export default function ApplicationEngineering() {
       className="offerings-card offerings-fade-in offerings-delay-2 offerings-float"
     >
       <div className="offerings-card-content">
-        <h3 className="offerings-title">DAIS™ Application Transformation</h3>
+        <h3 className="offerings-title">AI‑Led Application Modernization</h3>
         <ul className="offerings-list">
-          {[
-            "Performance optimization from infrastructure upgrades",
-            "Highest priority to security protocols and standards",
-            "Optimum use of automation for efficiency",
-            "Data quality enhancement and management",
-            "Analytics-driven alerts and decision-making",
-            "Deployment of wide variety of skill sets"
-          ].map((item, index) => (
-            <li key={index} className="offerings-list-item">
-              <div className="offerings-bullet"></div>
-              {item}
-            </li>
-          ))}
+          <li className="offerings-list-item"><span className="offerings-bullet"></span>Automated legacy code transformation and re‑platforming</li>
+          <li className="offerings-list-item"><span className="offerings-bullet"></span>Data and application decoupling for scalability</li>
+          <li className="offerings-list-item"><span className="offerings-bullet"></span>Embedded security and compliance by design</li>
+          <li className="offerings-list-item"><span className="offerings-bullet"></span>Intelligence‑driven performance optimization</li>
+          <li className="offerings-list-item"><span className="offerings-bullet"></span>Continuous modernization without business downtime</li>
         </ul>
       </div>
       <div className="offerings-decor-3"></div>
@@ -1231,10 +1193,9 @@ export default function ApplicationEngineering() {
   `}</style>
 
   <div className="cta-header">
-    <h2>Ready to Transform Your Applications?</h2>
+    <h2>Transform your application landscape into a high‑velocity digital platform</h2>
     <p>
-      Partner with us to build scalable, resilient, and future-ready applications
-      that drive business growth and digital transformation.
+      Partner with our product engineering specialists to modernize your application portfolio and enable continuous, outcome‑driven delivery.
     </p>
   </div>
 

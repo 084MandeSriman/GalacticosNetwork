@@ -446,13 +446,12 @@ export default function Cloud() {
 
           {/* RIGHT SIDE - CONTENT */}
           <div style={styles.heroContent} className="hero-content animate-text">
-            <div style={styles.heroTag} className="hero-tag">Cloud & Infrastructure</div>
+            <div style={styles.heroTag} className="hero-tag">Enterprise Cloud & Platform Engineering</div>
             <h1 style={styles.heroTitle} className="hero-title">
-              Building solutions with <br />
+              Engineer resilient cloud platforms <br />
               <span style={{ color: "#60a5fa" }}>
-                incessant innovation
-              </span> <br />
-              to create a legacy
+                that accelerate digital business
+              </span>
             </h1>
           </div>
 
@@ -463,12 +462,11 @@ export default function Cloud() {
       <section style={styles.section} className="section">
         <div style={{ textAlign: "center", marginBottom: "60px" }}>
           <h2 style={{ ...styles.heading, fontSize: "42px" }} className="heading">
-            Optimized Cloud Infrastructure <br />
-            <span style={{ color: "#0d6efd" }}>for Business Resiliency</span>
+            Cloud Platforms for Agility, Resilience,<br />
+            <span style={{ color: "#0d6efd" }}>and Continuous Innovation</span>
           </h2>
           <p style={{ ...styles.paragraph, margin: "0 auto", textAlign: "center" }} className="paragraph">
-            Our offerings help organizations seamlessly transition to cloud or hybrid environments, stabilize operations, and optimize infrastructure for 
-            <strong style={{ color: "#0d6efd" }}> cost efficiency, security, scalability, and agility.</strong>
+            We help enterprises evolve from infrastructure-centric models to cloud-native platform operating models—enabling faster product delivery, elastic scalability, built-in security, and continuous cost optimization.
           </p>
         </div>
 
@@ -479,7 +477,7 @@ export default function Cloud() {
               <span style={{ background: "#0d6efd", color: "#fff", padding: "4px 8px", borderRadius: "4px", fontSize: "14px" }}>■</span> Overview
             </h3>
             <p style={{ ...styles.paragraph, fontSize: "16px" }} className="paragraph">
-              By integrating automation, analytics, and diverse skill sets, we deliver an innovative and holistic <strong style={{ color: "#0d6efd" }}>DAIS™ approach</strong> to digital infrastructure transformation.
+              Our platform-led approach integrates automation, observability, FinOps, and policy-driven security to transform cloud into a continuous innovation engine rather than a hosting destination.
             </p>
 
             <div style={{ marginTop: "30px", display: "flex", justifyContent: "center" }}>
@@ -505,13 +503,13 @@ export default function Cloud() {
             </h3>
             <div style={{ display: "grid", gap: "8px" }}>
               {[
-                { icon: "🔧", text: "Technology & process understanding" },
-                { icon: "📊", text: "Data-driven change management" },
-                { icon: "🔗", text: "Multi-tool expertise" },
-                { icon: "⚙️", text: "Infra vs App resource optimization" },
-                { icon: "🛡️", text: "Security standards & best practices" },
-                { icon: "🤖", text: "Custom scripts & automation" },
-                { icon: "✔️", text: "Quality engineering focus" }
+                { icon: "📈", text: "Cloud strategy aligned to business value streams" },
+                { icon: "🏗️", text: "Application-aware infrastructure design" },
+                { icon: "💰", text: "FinOps-driven cost governance" },
+                { icon: "🔐", text: "Policy-as-code security and compliance" },
+                { icon: "📡", text: "Full-stack observability and SRE enablement" },
+                { icon: "🤖", text: "Automation-led operations" },
+                { icon: "📊", text: "Continuous optimization through analytics" }
               ].map((item, idx) => (
                 <div key={idx} className="dais-item">
                   <span style={{ fontSize: "18px", width: "25px" }}>{item.icon}</span>
@@ -525,15 +523,51 @@ export default function Cloud() {
 
       {/* CLOUD SERVICES */}
       <section style={{padding: "80px 20px", maxWidth: "1200px", margin: "0 auto"}}>
-        <h2 style={{...styles.heading, textAlign: "center", marginBottom: "60px"}} className="heading">Our Cloud Services</h2>
+        <h2 style={{...styles.heading, textAlign: "center", marginBottom: "60px"}} className="heading">Cloud Platform Capabilities</h2>
         <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "30px"}} className="services-grid">
           {[
-            { icon: "☁️", title: "Cloud Strategy", frontDesc: "Strategic planning", backDesc: "Assessment and roadmap services that evaluate infrastructure readiness and define migration paths.", gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" },
-            { icon: "🚀", title: "Cloud Migration", frontDesc: "Seamless migration", backDesc: "Secure and seamless migration of applications and data with minimal business disruption.", gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)" },
-            { icon: "⚡", title: "Cloud Optimization", frontDesc: "Performance boost", backDesc: "Continuous performance, scalability, and cost optimization of cloud environments.", gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)" },
-            { icon: "🔒", title: "Cloud Security", frontDesc: "Security focus", backDesc: "Robust security controls and regulatory compliance to protect cloud workloads.", gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)" },
-            { icon: "📊", title: "Managed Services", frontDesc: "24/7 support", backDesc: "24×7 monitoring, incident management, and operational support.", gradient: "linear-gradient(135deg, #30cfd0 0%, #330867 100%)" },
-            { icon: "🌐", title: "Multi-Cloud", frontDesc: "Unified control", backDesc: "Unified control and visibility across multiple cloud platforms.", gradient: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)" }
+            { 
+              icon: "☁️", 
+              title: "Cloud Value & Transformation Strategy", 
+              frontDesc: "Business‑first strategy", 
+              backDesc: "Align cloud initiatives with business outcomes, define value streams, and build a transformation roadmap that drives growth and agility.", 
+              gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" 
+            },
+            { 
+              icon: "🚀", 
+              title: "Application & Data Platform Modernization", 
+              frontDesc: "Modernize at scale", 
+              backDesc: "Refactor and replatform workloads using cloud-native patterns, containers, and serverless to improve resilience and reduce time‑to‑market.", 
+              gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)" 
+            },
+            { 
+              icon: "⚡", 
+              title: "Continuous Performance & FinOps Optimization", 
+              frontDesc: "Intelligent optimization", 
+              backDesc: "Continuously optimize performance, scalability, and cloud spend through data-driven FinOps, autoscaling, and workload right‑sizing.", 
+              gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)" 
+            },
+            { 
+              icon: "🔒", 
+              title: "Zero-Trust Cloud & Policy-Driven Governance", 
+              frontDesc: "Security by design", 
+              backDesc: "Embed zero-trust principles, automate compliance with policy-as-code, and enforce consistent security across all cloud environments.", 
+              gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)" 
+            },
+            { 
+              icon: "📊", 
+              title: "SRE-Led Cloud Platform Operations", 
+              frontDesc: "Reliability at scale", 
+              backDesc: "Establish site reliability engineering practices, full-stack observability, and automated incident response for always-on platforms.", 
+              gradient: "linear-gradient(135deg, #30cfd0 0%, #330867 100%)" 
+            },
+            { 
+              icon: "🌐", 
+              title: "Unified Multi‑Cloud Platform Engineering", 
+              frontDesc: "Seamless multi‑cloud", 
+              backDesc: "Design and operate consistent platform capabilities across AWS, Azure, GCP and private clouds with unified governance and tooling.", 
+              gradient: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)" 
+            }
           ].map((card) => (
             <div key={card.title} className="flip-card" style={{ perspective: "1000px", height: "320px", cursor: "pointer" }} onClick={() => toggleFlip(card.title)}>
               <div className="flip-card-inner" style={{ position: "relative", width: "100%", height: "100%", transition: "transform 0.6s", transformStyle: "preserve-3d", transform: flipped[card.title] ? "rotateY(180deg)" : "rotateY(0deg)" }}>
@@ -668,8 +702,8 @@ export default function Cloud() {
 
         <div className="cta-container">
           <div className="cta-left">
-            <h2>Talk to our Cloud experts today.</h2>
-            <p>Transform your infrastructure with DAIS™ methodology.</p>
+            <h2>Transform your cloud into a high‑velocity digital platform</h2>
+            <p>Partner with our cloud platform engineering specialists to enable continuous innovation, resilience, and cost intelligence.</p>
           </div>
           <div className="cta-buttons">
             <button className="cta-btn">Professional Services</button>

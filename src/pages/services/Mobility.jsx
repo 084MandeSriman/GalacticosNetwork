@@ -343,7 +343,7 @@ export default function Mobility() {
                 border: "1px solid rgba(255,255,255,0.2)",
               }}
             >
-              🚀 Mobility Solutions
+              Enterprise Mobility
             </div>
 
             <h1
@@ -356,7 +356,7 @@ export default function Mobility() {
                 letterSpacing: "-1px",
               }}
             >
-              Business Momentum Solutions
+              Accelerate digital value through intelligent, connected mobile experiences
             </h1>
 
             <p
@@ -369,7 +369,7 @@ export default function Mobility() {
                 fontWeight: "300",
               }}
             >
-              Transform your business with cutting-edge mobile solutions that drive growth and engagement.
+              Reimagine customer, workforce, and partner interactions with secure, scalable, platform-driven mobility solutions.
             </p>
 
             {/* Accent Line */}
@@ -534,7 +534,7 @@ export default function Mobility() {
               fontWeight: "400",
             }}
           >
-            Human behavior has seen a tectonic shift from desktop usage to mobile/tablet or other smart devices. With the world adopting digital ways, the digital realm is here to stay. The world population is rapidly becoming a digital population, driving changes in the way every institution transacts with its customer base.
+            Mobility is no longer a channel — it is the primary digital engagement layer for customers, employees, and ecosystems. We help enterprises design and deliver context-aware, secure, and high-performance mobile experiences that drive real-time decisions, revenue growth, and operational agility.
           </p>
         </div>
       </section>
@@ -572,7 +572,7 @@ export default function Mobility() {
               color: "#555",
             }}
           >
-            From decisions concerning methodology, platform and tools, to design, build and test of applications and interfaces that score maximum on synchronization, data exchange, security and usability, we take complete ownership of digitizing business processes. Our expertise spans the full spectrum of mobile development, ensuring your digital transformation is seamless and impactful.
+            We engineer enterprise mobility as a core digital platform capability — integrating mobile apps, APIs, data, cloud, and identity to deliver seamless, always-on experiences. Our approach enables faster innovation, real-time process execution, and measurable business outcomes across the value chain.
           </p>
         </div>
       </section>
@@ -659,7 +659,7 @@ export default function Mobility() {
                   Pharma
                 </h3>
                 <p style={{ lineHeight: 1.6, opacity: 0.9, color: "rgba(255,255,255,0.85)" }}>
-                  iPad solution for sales and marketing effectiveness tailored for pharmaceutical operations.
+                  Connected life sciences mobility enabling real-time field intelligence, compliant engagement, and data-driven commercial effectiveness.
                 </p>
               </div>
             </div>
@@ -710,7 +710,7 @@ export default function Mobility() {
                   Agriculture
                 </h3>
                 <p style={{ lineHeight: 1.6, opacity: 0.9, color: "rgba(255,255,255,0.85)" }}>
-                  Decision support solution connecting farmers and aggregators spanning sowing to harvesting processes.
+                  Digital agriculture platforms delivering farm-to-market visibility, advisory intelligence, and ecosystem collaboration in real time.
                 </p>
               </div>
             </div>
@@ -761,7 +761,7 @@ export default function Mobility() {
                   Insurance
                 </h3>
                 <p style={{ lineHeight: 1.6, opacity: 0.9, color: "rgba(255,255,255,0.85)" }}>
-                  Processing for insurance claims in auto, accident, home, travel, and health with seamless integration.
+                  Mobile-first insurance journeys enabling instant claims, digital underwriting, customer self-service, and partner connectivity.
                 </p>
               </div>
             </div>
@@ -806,10 +806,10 @@ export default function Mobility() {
                 marginBottom: "15px",
               }}
             >
-              Ready to Transform Your Business?
+              Transform mobility into a real-time digital engagement platform
             </h2>
             <p style={{ fontSize: "18px", opacity: 0.9 }}>
-              Talk to our Mobility experts today to explore tailored solutions for your needs.
+              Talk to our enterprise mobility specialists to build secure, scalable, and experience-driven mobile ecosystems.
             </p>
           </div>
 

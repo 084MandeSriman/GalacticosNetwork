@@ -548,9 +548,9 @@ export default function DataEngineering() {
         lineHeight: "1.8",
       }}
     >
-      Our Data Engineering services help organizations unlock the true value
-      of data by designing, building, and managing scalable data platforms
-      that support analytics, AI, and real-time insights.
+      We enable enterprises to transition from fragmented data landscapes to unified,
+      product-ready data platforms that power real-time decision-making, advanced
+      analytics, and AI at scale.
     </p>
 
     <p
@@ -563,8 +563,9 @@ export default function DataEngineering() {
         lineHeight: "1.8",
       }}
     >
-      We enable seamless data ingestion, transformation, governance, and
-      consumption—ensuring data is reliable, accessible, and business-ready.
+      Our platform-led approach ensures trusted, governed, and continuously available
+      data—transforming data from an operational by-product into a strategic
+      business asset.
     </p>
 
     {/* SPLIT SECTION */}
@@ -809,38 +810,38 @@ export default function DataEngineering() {
   >
     {[
       {
-        title: "Data Architecture & Strategy",
-        desc: "Designing modern data architectures aligned with business objectives.",
+        title: "Data Platform Strategy & Value Realization",
+        desc: "Align data initiatives with business value streams and define a scalable architecture roadmap for AI, analytics, and digital products.",
         icon: "M3 13h8V3H3v10zm10 8h8V3h-8v18z",
         color: "#22d3ee",
       },
       {
-        title: "Data Ingestion & Pipelines",
-        desc: "Building robust ETL/ELT pipelines for structured and unstructured data.",
+        title: "Intelligent Data Integration & Streaming",
+        desc: "Enable real-time and batch data ingestion using event-driven pipelines that deliver trusted and always-available data.",
         icon: "M12 2L2 7l10 5 10-5-10-5zm0 7L2 14l10 5 10-5-10-5z",
         color: "#38bdf8",
       },
       {
-        title: "Data Lakes & Warehouses",
-        desc: "Scalable data platforms optimized for analytics and reporting.",
+        title: "Modern Lakehouse & Data Platform Engineering",
+        desc: "Build cloud-native, high-performance data platforms that unify structured and unstructured data for analytics and AI.",
         icon: "M4 6h16v12H4z",
         color: "#60a5fa",
       },
       {
-        title: "Real-time & Streaming Analytics",
-        desc: "Processing high-velocity data for real-time insights and actions.",
+        title: "Real-Time Data & Decision Intelligence",
+        desc: "Process high-velocity data streams to enable instant insights, automated actions, and digital business models.",
         icon: "M3 17h18M6 10l3 3 6-6 3 3",
         color: "#34d399",
       },
       {
-        title: "Data Governance & Quality",
-        desc: "Ensuring data accuracy, consistency, security, and compliance.",
+        title: "Trusted Data, Governance & Compliance Automation",
+        desc: "Establish policy-driven governance, metadata intelligence, and automated data quality frameworks.",
         icon: "M12 2l8 4v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4z",
         color: "#fbbf24",
       },
       {
-        title: "Advanced Analytics Enablement",
-        desc: "Preparing data foundations for AI, ML, and advanced analytics use cases.",
+        title: "AI & Analytics-Ready Data Foundations",
+        desc: "Prepare scalable, high-quality data environments that accelerate machine learning and intelligent applications.",
         icon: "M12 8v8M8 12h8",
         color: "#a78bfa",
       },
@@ -1063,18 +1064,18 @@ export default function DataEngineering() {
   `}</style>
 
   <div className="cta-header">
-    <h2>Ready to Transform Your Applications?</h2>
+    <h2>Transform your data into a real‑time intelligence platform</h2>
     <p>
-      Partner with us to build scalable, resilient, and future-ready applications
-      that drive business growth and digital transformation.
+      Partner with our data engineering specialists to build governed, scalable,
+      and AI-ready data platforms that accelerate business outcomes.
     </p>
   </div>
 
   <div className="cta-box-wrapper">
     <div className="cta-box">
       <div className="cta-left-text">
-        Talk to our
-        <strong>Application Engineering</strong>
+        Talk to our<br />
+        <strong>Data Engineering</strong><br />
         experts today.
       </div>
     </div>
