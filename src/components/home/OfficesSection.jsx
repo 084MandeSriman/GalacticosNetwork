@@ -4,12 +4,11 @@ export default function OfficesSection() {
   const offices = [
     {
       name: "Dubai, UAE",
-      badge: "GLOBAL HQ",
+      badge: "WORLDWIDE",
       icon: "building",
-      location: "Business Bay, Dubai",
+      location: "Ajman, Dubai",
       country: "United Arab Emirates",
-      detail: "Strategic Leadership Hub",
-      email: "accounts@galacticosnetwork.com",
+      email: "hr@galacticosnetwork.com",
       color: "#ec4899"
     },
     {
@@ -18,7 +17,6 @@ export default function OfficesSection() {
       icon: "laptop",
       location: "Hi-Tech City",
       country: "Hyderabad – 500081",
-      detail: "95+ Technology Experts",
       email: "hr@galacticosnetwork.com",
       color: "#10b981"
     },
@@ -26,10 +24,9 @@ export default function OfficesSection() {
       name: "USA",
       badge: "WORLDWIDE",
       icon: "globe",
-      location: "Maple Shade",
+      location: "Raleigh",
       country: "North Carolina - 27526",
-      detail: "Enterprise 24/7 Coverage",
-      email: "accounts@galacticosnetwork.com",
+      email: "hr@galacticosnetwork.com",
       color: "#3b82f6"
     }
   ];
@@ -332,9 +329,7 @@ export default function OfficesSection() {
                 <span>{office.country}</span>
               </div>
               <div className="info-item">
-                <span className="info-icon-wrapper">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                </span>
+               
                 <span>{office.detail}</span>
               </div>
             </div>

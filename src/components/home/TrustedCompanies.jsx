@@ -106,21 +106,25 @@ export default function TrustedCompanies() {
           <div className="marquee-track">
 
             {/* SET 1 */}
-            <div className="logo-item"><img src="https://i.pinimg.com/736x/c1/ce/19/c1ce199e61e5987447ff4331141abec0.jpg" alt="" /></div>
+            
             <div className="logo-item"><img src="https://www.sagarsoft.in/wp-content/uploads/2022/07/logo-black.png" alt="" /></div>
             <div className="logo-item"><img src="https://www.fintinc.com/uploads/logo_be8aba0197.png" alt="" /></div>
-            <div className="logo-item"><img src="https://bhavnacorp.com/images/logo.png" alt="" /></div>
-            <div className="logo-item"><img src="https://res.cloudinary.com/hyld/image/upload/f_auto,q_auto/TCS_NewLogo_Final_CMYK_Black_new" alt="" /></div>
-            <div className="logo-item"><img src="https://www.happiestminds.com/wp-content/uploads/2026/01/happiest-minds-latest-logo.png" alt="" /></div>
+            <div className="logo-item"><img src="https://bhavnacorp.com/wp-content/uploads/2025/08/logo.png" alt="" /></div>
+            <div className="logo-item"><img src="https://www.kpipartners.com/hubfs/KPI-Partners-2021/Icons/KPI%20Logo%20(1).svg" alt="" /></div>
+            <div className="logo-item"><img src="https://levitateconsulting.tech/home/wp-content/uploads/2020/01/headerlogo.png" alt="" /></div>
+            <div className="logo-item"><img src="https://pyxismcg.com/images/logo.png" alt="" /></div>
+            <div className="logo-item"><img src="https://kanerika.com/wp-content/uploads/2025/05/Kanerika-Full-logo.svg" alt="" /></div>
             
 
             {/* SET 2 */}
-            <div className="logo-item"><img src="https://i.pinimg.com/736x/c1/ce/19/c1ce199e61e5987447ff4331141abec0.jpg" alt="" /></div>
+            
             <div className="logo-item"><img src="https://www.sagarsoft.in/wp-content/uploads/2022/07/logo-black.png" alt="" /></div>
             <div className="logo-item"><img src="https://www.fintinc.com/uploads/logo_be8aba0197.png" alt="" /></div>
-            <div className="logo-item"><img src="https://bhavnacorp.com/images/logo.png" alt="" /></div>
-            <div className="logo-item"><img src="https://res.cloudinary.com/hyld/image/upload/f_auto,q_auto/TCS_NewLogo_Final_CMYK_Black_new" alt="" /></div>
-            <div className="logo-item"><img src="https://www.happiestminds.com/wp-content/uploads/2026/01/happiest-minds-latest-logo.png" alt="" /></div>
+            <div className="logo-item"><img src="https://bhavnacorp.com/wp-content/uploads/2025/08/logo.png" alt="" /></div>
+            <div className="logo-item"><img src="https://www.kpipartners.com/hubfs/KPI-Partners-2021/Icons/KPI%20Logo%20(1).svg" alt="" /></div>
+            <div className="logo-item"><img src="https://levitateconsulting.tech/home/wp-content/uploads/2020/01/headerlogo.png" alt="" /></div>
+            <div className="logo-item"><img src="https://pyxismcg.com/images/logo.png" alt="" /></div>
+            <div className="logo-item"><img src="https://kanerika.com/wp-content/uploads/2025/05/Kanerika-Full-logo.svg" alt="" /></div>
              
 
           </div>

@@ -329,7 +329,7 @@ export default function HireAITalent() {
               </svg>
             </div>
             <div>
-              <span className="stat-number">400+</span>
+              <span className="stat-number">50+</span>
               <p className="stat-label">Vetted AI experts</p>
             </div>
           </div>
@@ -344,7 +344,7 @@ export default function HireAITalent() {
               </svg>
             </div>
             <div>
-              <span className="stat-number">100+</span>
+              <span className="stat-number">5+</span>
               <p className="stat-label">Countries</p>
             </div>
           </div>
