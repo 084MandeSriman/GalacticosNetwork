@@ -89,9 +89,9 @@ export default function Investors() {
             style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "24px" }}
           >
             {[
-              { label: "Enterprise Clients Served", value: "150+", icon: <TrendingUp size={24} color="#6366f1" /> },
+              { label: "Enterprise Clients Served", value: "25+", icon: <TrendingUp size={24} color="#6366f1" /> },
               { label: "Global Delivery Locations", value: "3+", icon: <Globe size={24} color="#6366f1" /> },
-              { label: "Consultants & Experts", value: "500+", icon: <Users size={24} color="#6366f1" /> },
+              { label: "Consultants & Experts", value: "150+", icon: <Users size={24} color="#6366f1" /> },
               { label: "Customer Retention", value: "95%+", icon: <Zap size={24} color="#6366f1" /> }
             ].map((metric, idx) => (
               <motion.div key={idx} variants={fadeIn} style={{

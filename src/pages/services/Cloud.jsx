@@ -496,28 +496,7 @@ export default function Cloud() {
             </div>
           </div>
 
-          <div className="enhanced-card" style={{ background: "#f8fbff" }}>
-            <div className="accent-line" style={{ background: "#00a3ff" }}></div>
-            <h3 style={{ fontSize: "24px", color: "#00a3ff", display: "flex", alignItems: "center", gap: "12px", marginBottom: "25px" }}>
-              <span style={{ fontSize: "20px" }}>⚡</span> DAIS™ Approach
-            </h3>
-            <div style={{ display: "grid", gap: "8px" }}>
-              {[
-                { icon: "📈", text: "Cloud strategy aligned to business value streams" },
-                { icon: "🏗️", text: "Application-aware infrastructure design" },
-                { icon: "💰", text: "FinOps-driven cost governance" },
-                { icon: "🔐", text: "Policy-as-code security and compliance" },
-                { icon: "📡", text: "Full-stack observability and SRE enablement" },
-                { icon: "🤖", text: "Automation-led operations" },
-                { icon: "📊", text: "Continuous optimization through analytics" }
-              ].map((item, idx) => (
-                <div key={idx} className="dais-item">
-                  <span style={{ fontSize: "18px", width: "25px" }}>{item.icon}</span>
-                  <span style={{ fontSize: "15px", fontWeight: "500", color: "#334155" }}>{item.text}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          
         </div>
       </section>
 

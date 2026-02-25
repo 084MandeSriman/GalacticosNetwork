@@ -770,15 +770,15 @@ export default function ApplicationEngineering() {
         
         <div style={styles.experienceStats}>
           <div style={styles.statItem} className="fade-in">
-            <div style={styles.statNumber}>30+</div>
+            <div style={styles.statNumber}>10+</div>
             <div style={styles.statLabel}>Years Experience</div>
           </div>
           <div style={styles.statItem} className="fade-in delay-1">
-            <div style={styles.statNumber}>500+</div>
+            <div style={styles.statNumber}>150+</div>
             <div style={styles.statLabel}>Projects Delivered</div>
           </div>
           <div style={styles.statItem} className="fade-in delay-2">
-            <div style={styles.statNumber}>50+</div>
+            <div style={styles.statNumber}>25+</div>
             <div style={styles.statLabel}>Global Clients</div>
           </div>
         </div>
