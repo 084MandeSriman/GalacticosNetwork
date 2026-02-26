@@ -23,6 +23,7 @@ import CloudSaaS from "./pages/services/CloudSaaS";
 import QualityEngineering from "./pages/services/QualityEngineering";
 import UiUx from "./pages/services/UiUx";
 import Mobility from "./pages/services/Mobility";
+import ERP from "./pages/services/erp";
 
 // Application Engineering Sub-services
 import Transformations from "./pages/services/Transformations";
@@ -169,6 +170,7 @@ javascript
         <Route path="/services/quality-engineering" element={<QualityEngineering />} />
         <Route path="/services/ui-ux" element={<UiUx />} />
         <Route path="/services/mobility" element={<Mobility />} />
+        <Route path="/services/erp" element={<ERP />} />
 
         {/* APPLICATION ENGINEERING SUB-SERVICES */}
         <Route path="/services/app-eng/transformations" element={<Transformations />} />

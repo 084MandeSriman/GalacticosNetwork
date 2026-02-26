@@ -115,7 +115,9 @@ export default function DigitalTransformation() {
       {/* HERO SECTION */}
       <section className="hero-section">
         <canvas ref={canvasRef} className="hero-canvas" />
-        
+        {/* optional background image overlay */}
+        <div className="hero-background" />
+
         {/* Animated background orbs with enhanced colors */}
         <div className="orb orb-1"></div>
         <div className="orb orb-2"></div>
@@ -123,7 +125,9 @@ export default function DigitalTransformation() {
 
         <div className="hero-content">
           <h1 className="glitch" data-text="Cloud Cost Optimization">Cloud Cost Optimization</h1>
+          <h2 className="hero-subtitle">Secure, scalable and smart cloud migration for enterprise-grade savings</h2>
           <p>Accelerate migration. Optimize cost. Maximize performance.</p>
+          <button className="hero-cta">Get a Free Assessment</button>
           <div className="hero-scroll-indicator">
             <span></span>
           </div>
@@ -132,80 +136,112 @@ export default function DigitalTransformation() {
 
       {/* CONTENT SECTIONS */}
       <section className="content">
-
-        {/* OVERVIEW SECTION */}
-        <div className="section overview-section">
-          <div className="section-header">
-            <h2>Overview</h2>
-            <div className="header-line"></div>
+        {/* GROUP: STRATEGIC OVERVIEW */}
+        <div className="section-group">
+          <div className="group-header">
+            <h2>Strategic Overview</h2>
+            <img
+              src="https://via.placeholder.com/1200x400?text=Cloud+Strategy+Illustration"
+              alt="Cloud strategy illustration"
+              className="group-image"
+            />
           </div>
-          <p>
-            Transform your infrastructure with a secure and scalable cloud migration strategy while gaining complete visibility and control over your cloud spend. Our comprehensive approach combines strategic planning, expert execution, and continuous optimization to maximize ROI on your cloud investments.
-          </p>
-          <div className="highlights">
-            <div className="highlight-box">
-              <span className="highlight-number">40%</span>
-              <span className="highlight-label">Average Cost Reduction</span>
+
+          {/* OVERVIEW SECTION */}
+          <div className="section overview-section">
+            <div className="section-header">
+              <h2>Overview</h2>
+              <div className="header-line"></div>
             </div>
-            <div className="highlight-box">
-              <span className="highlight-number">99.9%</span>
-              <span className="highlight-label">System Uptime SLA</span>
+            <p>
+              Transform your infrastructure with a secure and scalable cloud migration strategy while gaining complete visibility and control over your cloud spend. Our comprehensive approach combines strategic planning, expert execution, and continuous optimization to maximize ROI on your cloud investments.
+            </p>
+            <div className="highlights">
+              <div className="highlight-box">
+                <span className="highlight-number">40%</span>
+                <span className="highlight-label">Average Cost Reduction</span>
+              </div>
+              <div className="highlight-box">
+                <span className="highlight-number">99.9%</span>
+                <span className="highlight-label">System Uptime SLA</span>
+              </div>
+              <div className="highlight-box">
+                <span className="highlight-number">6+ Months</span>
+                <span className="highlight-label">Payback Period</span>
+              </div>
             </div>
-            <div className="highlight-box">
-              <span className="highlight-number">6+ Months</span>
-              <span className="highlight-label">Payback Period</span>
+          </div>
+
+          {/* BUSINESS CHALLENGES SECTION */}
+          <div className="section challenges-section">
+            <div className="section-header">
+              <h2>Business Challenges</h2>
+              <div className="header-line"></div>
+            </div>
+            <img
+              src="https://via.placeholder.com/800x300?text=Challenges"
+              alt="Business challenges"
+              className="section-image"
+            />
+            <div className="challenges-grid">
+              <div className="challenge-card">
+                <div className="challenge-icon">📊</div>
+                <h3>High Infrastructure Costs</h3>
+                <p>On-premise infrastructure maintenance and scaling is expensive and inflexible in today's dynamic market.</p>
+              </div>
+              <div className="challenge-card">
+                <div className="challenge-icon">💰</div>
+                <h3>Unpredictable Billing</h3>
+                <p>Lack of visibility into cloud consumption leads to billing surprises and budget overruns.</p>
+              </div>
+              <div className="challenge-card">
+                <div className="challenge-icon">⚙️</div>
+                <h3>Legacy Complexity</h3>
+                <p>Monolithic applications and outdated systems make cloud adoption and modernization challenging.</p>
+              </div>
+              <div className="challenge-card">
+                <div className="challenge-icon">⏱️</div>
+                <h3>Migration Risks</h3>
+                <p>Downtime risks and business continuity concerns during large-scale infrastructure transitions.</p>
+              </div>
+              <div className="challenge-card">
+                <div className="challenge-icon">🔑</div>
+                <h3>Governance Gaps</h3>
+                <p>Lack of cost governance policies and controls across multi-cloud environments.</p>
+              </div>
+              <div className="challenge-card">
+                <div className="challenge-icon">👥</div>
+                <h3>Skill Gaps</h3>
+                <p>Limited internal expertise in cloud architecture and optimization best practices.</p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* BUSINESS CHALLENGES SECTION */}
-        <div className="section challenges-section">
-          <div className="section-header">
-            <h2>Business Challenges</h2>
-            <div className="header-line"></div>
-          </div>
-          <div className="challenges-grid">
-            <div className="challenge-card">
-              <div className="challenge-icon">📊</div>
-              <h3>High Infrastructure Costs</h3>
-              <p>On-premise infrastructure maintenance and scaling is expensive and inflexible in today's dynamic market.</p>
-            </div>
-            <div className="challenge-card">
-              <div className="challenge-icon">💰</div>
-              <h3>Unpredictable Billing</h3>
-              <p>Lack of visibility into cloud consumption leads to billing surprises and budget overruns.</p>
-            </div>
-            <div className="challenge-card">
-              <div className="challenge-icon">⚙️</div>
-              <h3>Legacy Complexity</h3>
-              <p>Monolithic applications and outdated systems make cloud adoption and modernization challenging.</p>
-            </div>
-            <div className="challenge-card">
-              <div className="challenge-icon">⏱️</div>
-              <h3>Migration Risks</h3>
-              <p>Downtime risks and business continuity concerns during large-scale infrastructure transitions.</p>
-            </div>
-            <div className="challenge-card">
-              <div className="challenge-icon">🔑</div>
-              <h3>Governance Gaps</h3>
-              <p>Lack of cost governance policies and controls across multi-cloud environments.</p>
-            </div>
-            <div className="challenge-card">
-              <div className="challenge-icon">👥</div>
-              <h3>Skill Gaps</h3>
-              <p>Limited internal expertise in cloud architecture and optimization best practices.</p>
-            </div>
-          </div>
-        </div>
 
-        
+        {/* GROUP: IMPLEMENTATION & TECHNOLOGY */}
+        <div className="section-group">
+          <div className="group-header">
+            <h2>Implementation & Technology</h2>
+            <img
+              src="https://via.placeholder.com/1200x400?text=Implementation+Flow"
+              alt="Implementation flow"
+              className="group-image"
+            />
+          </div>
 
-        {/* COST OPTIMIZATION SECTION */}
-        <div className="section optimization-section">
+          {/* COST OPTIMIZATION SECTION */}
+          <div className="section optimization-section">
+            <img
+              src="https://via.placeholder.com/900x300?text=Optimization"
+              alt="Cost optimization visual"
+              className="section-image"
+            />
           <div className="section-header">
             <h2>Cost Optimization Framework</h2>
             <div className="header-line"></div>
           </div>
+          <p className="section-intro">Our six‑step framework ensures every dollar spent in the cloud is accounted for and optimized through automation, analytics, and best‑in‑class engineering.</p>
           <div className="optimization-grid">
             <div className="optimization-card">
               <div className="optimization-number">1</div>
@@ -248,10 +284,16 @@ export default function DigitalTransformation() {
 
         {/* PLATFORMS SECTION */}
         <div className="section platforms-section">
+          <img
+            src="https://via.placeholder.com/900x300?text=Cloud+Platforms"
+            alt="Cloud platforms"
+            className="section-image"
+          />
           <div className="section-header">
             <h2>Cloud Platforms & Technologies</h2>
             <div className="header-line"></div>
           </div>
+          <p className="section-intro">Leveraging a broad technology stack, we architect solutions that are cloud‑agnostic yet optimized for vendor‑specific capabilities.</p>
           <div className="platforms-grid">
             <div className="platform-card">
               <h3>AWS</h3>
@@ -274,10 +316,16 @@ export default function DigitalTransformation() {
 
         {/* OUTCOMES SECTION */}
         <div className="section outcomes-section">
+          <img
+            src="https://via.placeholder.com/900x300?text=Business+Outcomes"
+            alt="Business outcomes"
+            className="section-image"
+          />
           <div className="section-header">
             <h2>Business Outcomes & Why Choose Us</h2>
             <div className="header-line"></div>
           </div>
+          <p className="section-intro">Our clients consistently cite transformative results; below are the outcomes they measure and the reasons they keep partnering with us.</p>
           <div className="outcomes-grid">
             <div className="outcome-card success">
               <h3>💚 Up to 40% Cost Reduction</h3>
@@ -297,6 +345,7 @@ export default function DigitalTransformation() {
             </div>
           </div>
         </div>
+        </div>  {/* end implementation group */}
 
        
 
@@ -416,6 +465,67 @@ export default function DigitalTransformation() {
           text-align: center;
           color: white;
           overflow: hidden;
+        }
+        .hero-background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: url('/images/hero-clouds.jpg') center/cover no-repeat;
+          opacity: 0.3;
+          z-index: 1;
+        }
+        .hero-subtitle {
+          font-size: clamp(24px, 4vw, 32px);
+          margin-top: 10px;
+          font-weight: 500;
+          color: #e0e0ff;
+          text-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+        .hero-cta {
+          margin-top: 20px;
+          padding: 14px 50px;
+          font-size: 16px;
+          background: linear-gradient(145deg, #ff7e5f, #feb47b);
+          color: white;
+          border: none;
+          border-radius: 50px;
+          cursor: pointer;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .hero-cta:hover {
+          transform: scale(1.05);
+          box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+        }
+        .section-image {
+          display: block;
+          max-width: 100%;
+          margin: 20px auto;
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .section-intro {
+          font-size: 18px;
+          color: #d0d0ff;
+          margin-bottom: 30px;
+          text-align: center;
+          max-width: 900px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .group-header {
+          text-align: center;
+          margin-bottom: 60px;
+        }
+        .group-image {
+          max-width: 100%;
+          margin-top: 20px;
+          border-radius: 20px;
+        }
+        .section-group {
+          margin-bottom: 120px;
         }
 
         .hero-section h1 {

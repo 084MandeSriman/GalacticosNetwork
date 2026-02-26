@@ -397,6 +397,7 @@ export default function Navbar() {
                 <Link to="/services/quality-engineering">Quality Engineering</Link>
                 <Link to="/services/ui-ux">UX / UI Design</Link>
                 <Link to="/services/mobility">Mobility</Link>
+                 <Link to="/services/erp">ERP</Link>
               </div>
             </div>
 

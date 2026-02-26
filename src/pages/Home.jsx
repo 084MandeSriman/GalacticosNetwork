@@ -66,8 +66,7 @@ export default function Home() {
       <IndustriesSection />
       <CaseStudiesSection />
       <OfficesSection />
-      ,<TrustedCompanies />
-      
+      <TrustedCompanies />
       {/* <ContactSection /> */}
       
     </>
