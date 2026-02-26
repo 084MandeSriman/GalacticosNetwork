@@ -278,10 +278,10 @@ export default function ContactUs() {
 
   const CloudIllustration = () => (
     <svg viewBox="0 0 500 500" style={{ width: '100%', maxWidth: '450px', filter: 'drop-shadow(0 0 20px rgba(0,212,255,0.3))' }}>
-      <path 
-        d="M400,300 c0,44-36,80-80,80 H180 c-55,0-100-45-100-100 c0-50,37-91,85-99 c12-40,49-70,93-70 c38,0,71,22,87,54 C375,175,400,210,400,250 C400,250,400,300,400,300z" 
-        fill="rgba(255,255,255,0.05)" 
-        stroke="rgba(255,255,255,0.2)" 
+      <path
+        d="M400,300 c0,44-36,80-80,80 H180 c-55,0-100-45-100-100 c0-50,37-91,85-99 c12-40,49-70,93-70 c38,0,71,22,87,54 C375,175,400,210,400,250 C400,250,400,300,400,300z"
+        fill="rgba(255,255,255,0.05)"
+        stroke="rgba(255,255,255,0.2)"
         strokeWidth="2"
       />
       <g style={{ animation: "floatElement 4s ease-in-out infinite" }}>
@@ -299,16 +299,16 @@ export default function ContactUs() {
     <svg viewBox="0 0 400 400" style={{ width: '100%', maxWidth: '380px' }}>
       <circle cx="200" cy="200" r="150" fill="none" stroke="#e0e7ff" strokeWidth="1" strokeDasharray="5,5" />
       <circle cx="200" cy="200" r="100" fill="none" stroke="#e0e7ff" strokeWidth="1" />
-      
+
       {/* Animated Rings */}
       <circle cx="200" cy="200" r="20" fill="#8bc34a" style={{ animation: "pulse 2s infinite" }} />
-      
+
       {/* Floating Icons Representation */}
       <g style={{ animation: "floatElement 5s ease-in-out infinite" }}>
         <rect x="280" y="100" width="60" height="40" rx="10" fill="white" shadow="0 4px 10px rgba(0,0,0,0.1)" />
         <path d="M295 120 h30" stroke="#0d6efd" strokeWidth="3" strokeLinecap="round" />
       </g>
-      
+
       <g style={{ animation: "floatElement 6s ease-in-out infinite reverse" }}>
         <circle cx="100" cy="150" r="30" fill="white" />
         <path d="M90 150 a10 10 0 0 1 20 0" fill="none" stroke="#8bc34a" strokeWidth="3" />
@@ -337,17 +337,17 @@ export default function ContactUs() {
 
   return (
     <div style={{ fontFamily: "'Inter', sans-serif", color: "#333", overflowX: "hidden", background: "#fff" }}>
-      
+
       {/* HERO SECTION */}
       <section className="hero-section" style={{
-          minHeight: "85vh",
-          background: "linear-gradient(135deg, #0a2351 0%, #0d6efd 100%)",
-          position: "relative",
-          display: "flex",
-          alignItems: "center",
-          padding: "0 8%",
-          overflow: 'hidden'
-        }}>
+        minHeight: "85vh",
+        background: "linear-gradient(135deg, #0a2351 0%, #0d6efd 100%)",
+        position: "relative",
+        display: "flex",
+        alignItems: "center",
+        padding: "100px 8% 0", /* Added top padding to clear navbar */
+        overflow: 'hidden'
+      }}>
         <GridPattern />
         <div className="hero-grid" style={{
           display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "50px",
@@ -366,7 +366,7 @@ export default function ContactUs() {
               GET IN TOUCH
             </div>
             <h1 style={{ fontSize: "clamp(2.5rem, 5vw, 3.8rem)", fontWeight: 800, lineHeight: 1.1, marginBottom: "20px" }}>
-            Let’s Build Your<span style={{ color: "#00d4ff" }}>Next</span> Digital Transformation
+              Let’s Build Your<span style={{ color: "#00d4ff" }}>Next</span> Digital Transformation
             </h1>
             <div className="hero-line" style={{ width: "100px", height: "4px", background: "#8bc34a", marginBottom: "30px", borderRadius: "2px" }} />
             <p style={{ fontSize: "1.15rem", lineHeight: 1.8, opacity: 0.85, marginBottom: "40px", maxWidth: "550px", fontWeight: 300 }}>
@@ -403,25 +403,25 @@ export default function ContactUs() {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', justifyContent: 'center' }}>
             {[
-              { 
-                title: 'Hyderabad, India', 
-                info: ['502, Madhu Residency', 'HITEC City, Hyderabad, Telangana 500081'], 
-                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0d6efd" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              {
+                title: 'Hyderabad, India',
+                info: ['502, Madhu Residency', 'HITEC City, Hyderabad, Telangana 500081'],
+                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0d6efd" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
               },
-              { 
-                title: 'USA', 
-                info: ['Raleigh, North Carolina - 27526'], 
-                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0d6efd" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              {
+                title: 'USA',
+                info: ['Raleigh, North Carolina - 27526'],
+                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0d6efd" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
               },
-              { 
-                title: 'Our Mailbox', 
-                info: ['hr@galacticosnetwork.com'], 
-                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0d6efd" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+              {
+                title: 'Our Mailbox',
+                info: ['hr@galacticosnetwork.com'],
+                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0d6efd" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m2 7 10 6 10-6" /></svg>
               },
-              { 
-                title: 'Our Phone', 
-                info: ['+1 91 9843764273'], 
-                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0d6efd" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              {
+                title: 'Our Phone',
+                info: ['+1 91 9843764273'],
+                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0d6efd" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
               }
             ].map((item, i) => (
               <div key={i} className="contact-item" style={{ display: 'flex', alignItems: 'flex-start', gap: '20px' }}>
@@ -441,7 +441,7 @@ export default function ContactUs() {
       {/* CONTACT FORM SECTION WITH ILLUSTRATION */}
       <section className="contact-form-section" style={{ padding: "40px 8%", background: "#fff" }}>
         <div className="contact-form-grid" style={{
-          maxWidth: "1100px", margin: "0 auto", display: "grid", 
+          maxWidth: "1100px", margin: "0 auto", display: "grid",
           gridTemplateColumns: "0.9fr 1.1fr", gap: "50px", alignItems: "center"
         }}>
           {/* Left Side: Call Illustration */}
@@ -454,8 +454,8 @@ export default function ContactUs() {
           </div>
 
           {/* Right Side: Form */}
-          <div className="form-container" style={{ 
-            padding: "35px", borderRadius: "40px", background: "#f8fafc", 
+          <div className="form-container" style={{
+            padding: "35px", borderRadius: "40px", background: "#f8fafc",
             border: "1px solid #f1f5f9", boxShadow: "0 40px 80px rgba(0,0,0,0.05)"
           }}>
             <h2 style={{ fontSize: "2rem", marginBottom: "25px", color: "#0a2351", fontWeight: 800 }}>Speak with a Transformation Expert</h2>
@@ -479,8 +479,8 @@ export default function ContactUs() {
                 background: "#0a2351", color: "#fff", fontWeight: "700", cursor: "pointer",
                 fontSize: "1.05rem", transition: '0.3s', boxShadow: '0 10px 20px rgba(10,35,81,0.2)'
               }}
-              onMouseEnter={(e) => e.target.style.background = "#0d6efd"}
-              onMouseLeave={(e) => e.target.style.background = "#0a2351"}
+                onMouseEnter={(e) => e.target.style.background = "#0d6efd"}
+                onMouseLeave={(e) => e.target.style.background = "#0a2351"}
               >
                 {isSubmitted ? "✓ Thank you. Our team will contact you shortly." : "Send Message"}
               </button>
@@ -493,7 +493,7 @@ export default function ContactUs() {
       <div className="offices-section">
         <OfficesSection />
       </div>
-    
+
     </div>
   );
 }

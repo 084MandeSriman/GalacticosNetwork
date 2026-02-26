@@ -6,8 +6,8 @@ export default function TrustedCompanies() {
       <style>{`
         .trusted-companies {
           position: relative;
-          padding: 30px 0; /* further reduced from 50px to 30px */
-          background: #0f0c29;
+          padding: 80px 0; /* Removing side padding for full-width marquee fade */
+          background: #0f0c29; /* Deep dark violet base */
           background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
           overflow: hidden;
           font-family: 'Inter', sans-serif;
@@ -80,14 +80,14 @@ export default function TrustedCompanies() {
           letter-spacing: 2px;
           text-transform: uppercase;
           color: #00c3ff;
-          margin-bottom: 8px; /* reduced from 12px to 8px */
+          margin-bottom: 12px;
         }
 
         .trusted-title {
           text-align: center;
           font-size: clamp(2rem, 4vw, 2.8rem);
           font-weight: 800;
-          margin-bottom: 20px; /* reduced from 30px to 20px */
+          margin-bottom: 60px;
           background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -100,6 +100,7 @@ export default function TrustedCompanies() {
           display: flex;
           overflow: hidden;
           width: 100%;
+          /* Left & Right fade mask for the marquee */
           mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
           -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
         }
@@ -131,12 +132,14 @@ export default function TrustedCompanies() {
           max-width: 160px;
           max-height: 80px;
           object-fit: contain;
+          /* Auto-highlighted: Pure white & visible without hover */
           filter: grayscale(100%) brightness(0) invert(1) opacity(0.9) drop-shadow(0 0 8px rgba(0, 195, 255, 0.2));
           transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
           cursor: pointer;
         }
 
         .logo-item:hover img {
+          /* Full opacity white on hover + extra scale + stronger glow */
           filter: grayscale(100%) brightness(0) invert(1) opacity(1) drop-shadow(0 0 20px rgba(0, 195, 255, 0.5));
           transform: scale(1.1) translateY(-2px);
         }
@@ -154,14 +157,11 @@ export default function TrustedCompanies() {
         /* ===== MOBILE ===== */
         @media (max-width: 768px) {
           .trusted-companies {
-            padding: 25px 0; /* reduced further from 40px to 25px */
+            padding: 50px 0;
           }
           .trusted-title {
             font-size: 1.8rem;
-            margin-bottom: 18px; /* adjusted */
-          }
-          .trusted-label {
-            margin-bottom: 6px; /* reduced */
+            margin-bottom: 40px;
           }
           .marquee-track { animation-duration: 15s; }
           .logo-item { padding: 0 25px; }

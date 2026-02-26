@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { TrendingUp, Globe, Users, Target, Shield, Zap, ChevronRight, ArrowRight } from 'lucide-react';
+import { ArrowRight, Server, Database, Cloud, Globe, Shield, Zap, Target } from 'lucide-react';
 
 export default function Investors() {
   const navigate = useNavigate();
@@ -19,28 +19,112 @@ export default function Investors() {
     }
   };
 
+  // SVG Illustration for ERP / Enterprise Services
+  const ERPIllustration = () => (
+    <svg width="100%" height="100%" viewBox="0 0 500 500" style={{ overflow: "visible" }}>
+      <defs>
+        <linearGradient id="erpGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#4f46e5" />
+          <stop offset="100%" stopColor="#312e81" />
+        </linearGradient>
+        <linearGradient id="erpGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#0ea5e9" />
+          <stop offset="100%" stopColor="#0369a1" />
+        </linearGradient>
+        <linearGradient id="erpGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#8b5cf6" />
+          <stop offset="100%" stopColor="#5b21b6" />
+        </linearGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="8" result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        <style>
+          {`
+            @keyframes spin-slow { 100% { transform: rotate(360deg); } }
+            @keyframes pulse-ring { 0%, 100% { r: 60px; opacity: 0.5; } 50% { r: 80px; opacity: 0.2; } }
+            @keyframes dash { to { stroke-dashoffset: -40; } }
+            @keyframes float-node { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+          `}
+        </style>
+      </defs>
+
+      {/* Background Rings */}
+      <circle cx="250" cy="250" r="180" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="2" strokeDasharray="10 10" />
+      <circle cx="250" cy="250" r="120" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+
+      {/* Central Hub (ERP Core) */}
+      <circle cx="250" cy="250" r="60" fill="url(#erpGrad1)" filter="url(#glow)" />
+      <circle cx="250" cy="250" r="40" fill="url(#erpGrad2)" />
+      <circle cx="250" cy="250" r="20" fill="#fff" opacity="0.9" />
+      <circle cx="250" cy="250" r="80" fill="none" stroke="#4f46e5" strokeWidth="2" style={{ animation: 'pulse-ring 4s ease-in-out infinite' }} />
+
+      {/* Orbiting Elements */}
+      <g style={{ transformOrigin: '250px 250px', animation: 'spin-slow 30s linear infinite' }}>
+        {/* Connection Lines */}
+        <path d="M 250 130 L 250 190" stroke="#8b5cf6" strokeWidth="3" strokeDasharray="8 8" style={{ animation: 'dash 2s linear infinite' }} />
+        <path d="M 250 370 L 250 310" stroke="#0ea5e9" strokeWidth="3" strokeDasharray="8 8" style={{ animation: 'dash 2s linear infinite' }} />
+        <path d="M 130 250 L 190 250" stroke="#4f46e5" strokeWidth="3" strokeDasharray="8 8" style={{ animation: 'dash 2s linear infinite' }} />
+        <path d="M 370 250 L 310 250" stroke="#8b5cf6" strokeWidth="3" strokeDasharray="8 8" style={{ animation: 'dash 2s linear infinite' }} />
+
+        {/* Nodes */}
+        <g transform="translate(250, 100)">
+          <circle cx="0" cy="0" r="30" fill="url(#erpGrad3)" filter="url(#glow)" />
+          <rect x="-10" y="-10" width="20" height="20" fill="#fff" rx="4" opacity="0.8" />
+        </g>
+        <g transform="translate(250, 400)">
+          <circle cx="0" cy="0" r="30" fill="url(#erpGrad2)" filter="url(#glow)" />
+          <polygon points="0,-12 12,8 -12,8" fill="#fff" opacity="0.8" />
+        </g>
+        <g transform="translate(100, 250)">
+          <circle cx="0" cy="0" r="30" fill="url(#erpGrad1)" filter="url(#glow)" />
+          <circle cx="0" cy="0" r="10" fill="#fff" opacity="0.8" />
+        </g>
+        <g transform="translate(400, 250)">
+          <circle cx="0" cy="0" r="30" fill="url(#erpGrad3)" filter="url(#glow)" />
+          <path d="M -8 -8 L 8 8 M -8 8 L 8 -8" stroke="#fff" strokeWidth="4" strokeLinecap="round" opacity="0.8" />
+        </g>
+      </g>
+
+      {/* Diagonal Nodes (Cloud, Data) */}
+      <g style={{ animation: 'float-node 6s ease-in-out infinite' }}>
+        <g transform="translate(140, 140)">
+          <circle cx="0" cy="0" r="25" fill="#1e293b" stroke="#0ea5e9" strokeWidth="2" />
+          <circle cx="0" cy="0" r="5" fill="#0ea5e9" filter="url(#glow)" />
+        </g>
+        <g transform="translate(360, 360)">
+          <circle cx="0" cy="0" r="25" fill="#1e293b" stroke="#8b5cf6" strokeWidth="2" />
+          <circle cx="0" cy="0" r="5" fill="#8b5cf6" filter="url(#glow)" />
+        </g>
+      </g>
+    </svg>
+  );
+
   return (
     <div style={{ background: "#f8fafc", minHeight: "100vh", paddingBottom: "80px" }}>
       {/* Hero Section */}
       <section style={{
-        background: "linear-gradient(135deg, #020617 0%, #1e1b4b 100%)",
+        background: "linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e1b4b 100%)",
         color: "white",
-        padding: "120px 6%",
+        padding: "160px 6% 120px",
         position: "relative",
         overflow: "hidden"
       }}>
-        {/* Animated Background SVG */}
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-          style={{ position: "absolute", top: "-30%", right: "-10%", opacity: 0.15, pointerEvents: "none" }}
-        >
-          <svg width="800" height="800" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#6366f1" d="M45.7,-76.3C58.9,-69.3,69.5,-55.5,77.5,-40.5C85.5,-25.5,91,-9.3,88.7,6.1C86.4,21.5,76.3,36.1,65.2,49.1C54.1,62.1,42.1,73.5,27.5,80.4C12.9,87.2,-4.3,89.5,-20.5,85.6C-36.8,81.7,-52.1,71.6,-63.9,58.7C-75.7,45.8,-84,30.1,-87.3,13.6C-90.5,-2.9,-88.7,-20.2,-80.6,-34.5C-72.5,-48.8,-58.1,-60.1,-43.5,-66.6C-28.9,-73.1,-14.4,-74.8,1.4,-77.1C17.3,-79.4,34.6,-82.3,45.7,-76.3Z" transform="translate(100 100)" />
-          </svg>
-        </motion.div>
+        <div style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: "radial-gradient(circle at 80% 20%, rgba(79, 70, 229, 0.15) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(14, 165, 233, 0.1) 0%, transparent 50%)",
+          zIndex: 0
+        }} />
 
-        <div style={{ maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "60px", alignItems: "center" }}>
+
           <motion.div initial="hidden" animate="visible" variants={fadeIn}>
             <span style={{
               display: "inline-block",
@@ -55,30 +139,59 @@ export default function Investors() {
               letterSpacing: "1px",
               textTransform: "uppercase"
             }}>
-              Investor Relations
+              Our Expertise
             </span>
             <h1 style={{
-              fontSize: "clamp(40px, 6vw, 64px)",
+              fontSize: "clamp(40px, 5.5vw, 68px)",
               fontWeight: "800",
               marginBottom: "24px",
               lineHeight: "1.1",
               letterSpacing: "-1px"
             }}>
-              Invest in the Future of <br />
-              <span style={{ background: "linear-gradient(to right, #4f46e5, #a5b4fc)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Enterprise Innovation</span>
+              Mastering <br />
+              <span style={{ background: "linear-gradient(to right, #60a5fa, #a78bfa)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Enterprise IT</span>
             </h1>
-            <p style={{ fontSize: "clamp(16px, 2vw, 20px)", color: "#cbd5e1", maxWidth: "650px", marginBottom: "40px", lineHeight: "1.6" }}>
-              Galacticos Network partners with global enterprises to deliver SAP transformation, cloud modernization, and data-driven innovation. We are building a high-growth, future-ready digital services organization with strong long-term value creation.
+            <p style={{ fontSize: "clamp(16px, 1.8vw, 20px)", color: "#cbd5e1", maxWidth: "600px", marginBottom: "40px", lineHeight: "1.7" }}>
+              We specialize in delivering robust ERP solutions, seamless cloud migrations, and data-driven insights. Partner with our experts to architect a scalable and future-ready digital core for your business.
             </p>
             <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-              
-              
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => navigate('/contact')}
+                style={{
+                  background: "white",
+                  color: "#0f172a",
+                  padding: "16px 32px",
+                  borderRadius: "12px",
+                  fontWeight: "700",
+                  fontSize: "16px",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  boxShadow: "0 10px 25px rgba(0,0,0,0.2)"
+                }}
+              >
+                Consult an Expert <ArrowRight size={20} />
+              </motion.button>
             </div>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            style={{ width: "100%", maxWidth: "550px", margin: "0 auto", filter: "drop-shadow(0 20px 40px rgba(99, 102, 241, 0.3))" }}
+          >
+            <ERPIllustration />
+          </motion.div>
+
         </div>
       </section>
 
-      {/* Key Metrics Section */}
+      {/* Core Expertise Metrics */}
       <section style={{ padding: "0 6%", marginTop: "-60px", position: "relative", zIndex: 2 }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <motion.div
@@ -89,16 +202,16 @@ export default function Investors() {
             style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "24px" }}
           >
             {[
-              { label: "Enterprise Clients Served", value: "25+", icon: <TrendingUp size={24} color="#6366f1" /> },
-              { label: "Global Delivery Locations", value: "3+", icon: <Globe size={24} color="#6366f1" /> },
-              { label: "Consultants & Experts", value: "150+", icon: <Users size={24} color="#6366f1" /> },
-              { label: "Customer Retention", value: "95%+", icon: <Zap size={24} color="#6366f1" /> }
+              { label: "ERP Implementations", value: "50+", icon: <Server size={24} color="#6366f1" /> },
+              { label: "Cloud Migrations", value: "100+", icon: <Cloud size={24} color="#6366f1" /> },
+              { label: "Data Volume Managed", value: "10+ PB", icon: <Database size={24} color="#6366f1" /> },
+              { label: "System Uptime", value: "99.9%", icon: <Zap size={24} color="#6366f1" /> }
             ].map((metric, idx) => (
               <motion.div key={idx} variants={fadeIn} style={{
                 background: "white",
                 padding: "32px",
                 borderRadius: "20px",
-                boxShadow: "0 20px 40px rgba(0,0,0,0.04)",
+                boxShadow: "0 20px 40px rgba(0,0,0,0.06)",
                 border: "1px solid rgba(226, 232, 240, 0.8)",
                 display: "flex",
                 flexDirection: "column",
@@ -108,20 +221,221 @@ export default function Investors() {
                   {metric.icon}
                 </div>
                 <h3 style={{ fontSize: "36px", fontWeight: "800", color: "#0f172a", marginBottom: "8px", letterSpacing: "-1px" }}>{metric.value}</h3>
-                <p style={{ color: "#64748b", fontWeight: "500", fontSize: "15px" }}>{metric.label}</p>
+                <p style={{ color: "#64748b", fontWeight: "600", fontSize: "15px" }}>{metric.label}</p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Why Invest Section */}
-      <section style={{ padding: "100px 6%" }}>
+      {/* Our Services Section */}
+      <section style={{ padding: "120px 6%" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} style={{ textAlign: "center", marginBottom: "70px" }}>
+            <span style={{ color: "#4f46e5", fontWeight: "700", textTransform: "uppercase", letterSpacing: "1px", fontSize: "14px" }}>Core Competencies</span>
+            <h2 style={{ fontSize: "clamp(32px, 4vw, 44px)", fontWeight: "800", color: "#0f172a", margin: "16px 0", letterSpacing: "-1px" }}>Driving Digital Operations</h2>
+            <p style={{ fontSize: "18px", color: "#64748b", maxWidth: "750px", margin: "0 auto", lineHeight: "1.7" }}>
+              We provide end-to-end technology solutions to optimize your business processes, enhance operational efficiency, and accelerate growth.
+            </p>
+          </motion.div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "60px" }}>
+
+            {/* Service 1: ERP */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "40px", alignItems: "center", background: "white", padding: "40px", borderRadius: "32px", border: "1px solid #e2e8f0", boxShadow: "0 20px 40px rgba(0,0,0,0.03)" }}
+            >
+              <div>
+                <div style={{ background: "rgba(79, 70, 229, 0.1)", display: "inline-flex", padding: "12px", borderRadius: "16px", marginBottom: "24px" }}>
+                  <Server size={32} color="#4f46e5" />
+                </div>
+                <h3 style={{ fontSize: "32px", fontWeight: "800", color: "#0f172a", marginBottom: "16px" }}>Enterprise Resource Planning (ERP)</h3>
+                <p style={{ fontSize: "18px", color: "#475569", lineHeight: "1.7", marginBottom: "24px" }}>
+                  Unlock the full potential of your enterprise with comprehensive ERP solutions. We specialize in SAP S/4HANA implementations, migrations, and support, helping you streamline finance, supply chain, and manufacturing operations into a unified, intelligent digital core.
+                </p>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
+                  {["Greenfield & Brownfield SAP S/4HANA", "ERP Cloud Migration", "Process Optimization & Automation", "Application Management Services (AMS)"].map((item, i) => (
+                    <li key={i} style={{ display: "flex", alignItems: "center", gap: "12px", color: "#334155", fontWeight: "500", fontSize: "16px" }}>
+                      <div style={{ background: "#e0e7ff", borderRadius: "50%", padding: "4px" }}>
+                        <Target size={14} color="#4f46e5" />
+                      </div>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div style={{ background: "#f8fafc", borderRadius: "24px", padding: "40px", display: "flex", justifyContent: "center", alignItems: "center", minHeight: "350px", border: "1px solid #f1f5f9" }}>
+                {/* Minimalist ERP Graphic */}
+                <svg width="100%" height="250" viewBox="0 0 300 250">
+                  <defs>
+                    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#818cf8" /><stop offset="100%" stopColor="#4f46e5" /></linearGradient>
+                    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#38bdf8" /><stop offset="100%" stopColor="#0284c7" /></linearGradient>
+                    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#c084fc" /><stop offset="100%" stopColor="#9333ea" /></linearGradient>
+                  </defs>
+                  <g transform="translate(150, 125)">
+                    {/* Hexagon Hub */}
+                    <path d="M 0 -50 L 43 -25 L 43 25 L 0 50 L -43 25 L -43 -25 Z" fill="url(#g1)" opacity="0.9" />
+                    <circle cx="0" cy="0" r="15" fill="white" />
+
+                    {/* Modules connecting to hub */}
+                    <g transform="translate(-80, -70)">
+                      <path d="M 20 60 L 60 40" stroke="#cbd5e1" strokeWidth="3" strokeDasharray="4 4" />
+                      <rect x="-20" y="-20" width="40" height="40" rx="10" fill="url(#g2)" />
+                      <circle cx="0" cy="0" r="8" fill="white" opacity="0.9" />
+                    </g>
+
+                    <g transform="translate(80, -70)">
+                      <path d="M -20 60 L -60 40" stroke="#cbd5e1" strokeWidth="3" strokeDasharray="4 4" />
+                      <rect x="-20" y="-20" width="40" height="40" rx="10" fill="url(#g3)" />
+                      <path d="M -8 -4 L 0 4 L 8 -4 L 8 8 L -8 8 Z" fill="white" opacity="0.9" />
+                    </g>
+
+                    <g transform="translate(0, 90)">
+                      <path d="M 0 -20 L 0 -40" stroke="#cbd5e1" strokeWidth="3" strokeDasharray="4 4" />
+                      <rect x="-30" y="-20" width="60" height="40" rx="10" fill="url(#g1)" opacity="0.7" />
+                      <line x1="-15" y1="-5" x2="15" y2="-5" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                      <line x1="-15" y1="5" x2="5" y2="5" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                    </g>
+
+                    {/* Floating dots data transfer */}
+                    <circle cx="-50" cy="-45" r="4" fill="#38bdf8">
+                      <animate attributeName="cx" values="-80;-40;-80" dur="2s" repeatCount="indefinite" />
+                      <animate attributeName="cy" values="-70;-25;-70" dur="2s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="50" cy="-45" r="4" fill="#c084fc">
+                      <animate attributeName="cx" values="80;40;80" dur="2.5s" repeatCount="indefinite" />
+                      <animate attributeName="cy" values="-70;-25;-70" dur="2.5s" repeatCount="indefinite" />
+                    </circle>
+                  </g>
+                </svg>
+              </div>
+            </motion.div>
+
+            {/* Multi-Service Grid */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "30px" }}>
+              {[
+                {
+                  title: "Cloud Infrastructure",
+                  desc: "Migrate, modernize, and manage your applications on hyperscalers (AWS, Azure, GCP). We build resilient, scalable cloud architectures that reduce TCO and accelerate time-to-market.",
+                  icon: <Cloud size={32} color="#0ea5e9" />,
+                  iconBg: "rgba(14, 165, 233, 0.1)",
+                  image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+                  points: ["Cloud Native Architecture", "Multi-Cloud Strategy", "DevOps & CI/CD Setup", "Cloud Security"],
+                  delay: 0.1
+                },
+                {
+                  title: "Data Analytics & AI",
+                  desc: "Transform raw enterprise data into actionable intelligence. We design robust data lakes, implement advanced analytics, and integrate AI models to drive predictive decision-making.",
+                  icon: <Database size={32} color="#8b5cf6" />,
+                  iconBg: "rgba(139, 92, 246, 0.1)",
+                  image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+                  points: ["Enterprise Data Warehousing", "Business Intelligence", "Predictive Analytics", "Machine Learning Integration"],
+                  delay: 0.2
+                },
+                {
+                  title: "Cybersecurity Services",
+                  desc: "Protect your digital assets with enterprise-grade security. We implement Zero Trust architectures, continuous monitoring, and robust compliance frameworks.",
+                  icon: <Shield size={32} color="#f43f5e" />,
+                  iconBg: "rgba(244, 63, 94, 0.1)",
+                  image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
+                  points: ["Zero Trust Implementation", "Vulnerability Management", "Identity & Access", "Regulatory Compliance"],
+                  delay: 0.3
+                },
+                {
+                  title: "Digital Engineering",
+                  desc: "Accelerate innovation with custom software. We utilize agile methodologies to build high-performance web, mobile, and cloud-native applications tailored for your enterprise.",
+                  icon: <Zap size={32} color="#f59e0b" />,
+                  iconBg: "rgba(245, 158, 11, 0.1)",
+                  image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&q=80",
+                  points: ["Custom Product Development", "Microservices Architecture", "API Integration", "Legacy Modernization"],
+                  delay: 0.4
+                },
+                {
+                  title: "Generative AI Solutions",
+                  desc: "Harness the power of Large Language Models and Generative AI. We build custom AI assistants, automate content creation, and integrate cutting-edge models into your workflows.",
+                  icon: <Target size={32} color="#10b981" />,
+                  iconBg: "rgba(16, 185, 129, 0.1)",
+                  image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80",
+                  points: ["Custom LLM Integration", "AI-Powered Assistants", "Workflow Automation", "Prompt Engineering"],
+                  delay: 0.5
+                },
+                {
+                  title: "Managed IT Services",
+                  desc: "End-to-end IT support and operations management. We ensure your infrastructure runs smoothly 24/7 with proactive monitoring, helpdesk support, and automated remediation.",
+                  icon: <Globe size={32} color="#6366f1" />,
+                  iconBg: "rgba(99, 102, 241, 0.1)",
+                  image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+                  points: ["24/7 Monitored Support", "NOC & SOC Operations", "IT Asset Management", "Disaster Recovery"],
+                  delay: 0.6
+                }
+              ].map((service, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: service.delay }}
+                  style={{
+                    background: "white",
+                    padding: "40px",
+                    borderRadius: "32px",
+                    border: "1px solid #e2e8f0",
+                    boxShadow: "0 15px 35px rgba(0,0,0,0.04)",
+                    display: "flex",
+                    flexDirection: "column",
+                    height: "100%"
+                  }}
+                >
+                  <div style={{ background: service.iconBg, display: "inline-flex", padding: "12px", borderRadius: "16px", marginBottom: "24px", alignSelf: "flex-start" }}>
+                    {service.icon}
+                  </div>
+                  <h3 style={{ fontSize: "28px", fontWeight: "800", color: "#0f172a", marginBottom: "16px" }}>{service.title}</h3>
+                  <p style={{ fontSize: "16px", color: "#475569", lineHeight: "1.7", marginBottom: "24px", flexGrow: 1 }}>
+                    {service.desc}
+                  </p>
+                  <div style={{ width: "100%", height: "220px", borderRadius: "18px", overflow: "hidden", marginBottom: "24px" }}>
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        transition: "transform 0.5s ease"
+                      }}
+                      onMouseOver={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+                      onMouseOut={(e) => e.currentTarget.style.transform = "scale(1)"}
+                    />
+                  </div>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
+                    {service.points.map((item, i) => (
+                      <li key={i} style={{ display: "flex", alignItems: "center", gap: "10px", color: "#334155", fontWeight: "600", fontSize: "15px" }}>
+                        <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "50%", padding: "4px" }}>
+                          <ArrowRight size={14} color="#64748b" />
+                        </div>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Expertise Delivery / Why Choose Us */}
+      <section style={{ padding: "100px 6%", background: "white", borderTop: "1px solid #f1f5f9" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} style={{ textAlign: "center", marginBottom: "60px" }}>
-            <h2 style={{ fontSize: "clamp(32px, 4vw, 44px)", fontWeight: "800", color: "#0f172a", marginBottom: "16px", letterSpacing: "-1px" }}>Why Invest in Galacticos?</h2>
+            <h2 style={{ fontSize: "clamp(32px, 4vw, 44px)", fontWeight: "800", color: "#0f172a", marginBottom: "16px", letterSpacing: "-1px" }}>The Galacticos Advantage</h2>
             <p style={{ fontSize: "18px", color: "#64748b", maxWidth: "700px", margin: "0 auto", lineHeight: "1.7" }}>
-              We are strategically positioned at the intersection of enterprise resource planning, artificial intelligence integration, and high-performance cloud infrastructure.
+              Our methodology guarantees low-risk implementations and high-quality deliverables, backed by industry-standard frameworks and certified deep-tech professionals.
             </p>
           </motion.div>
 
@@ -130,126 +444,60 @@ export default function Investors() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "32px" }}
+            style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "24px" }}
           >
             {[
               {
-                title: "Market Leadership",
-                desc: "A trusted partner for SAP S/4HANA, cloud, and data transformation programs, delivering measurable outcomes for global enterprises.",
-                icon: <Target size={32} color="#fff" />,
-                gradient: "linear-gradient(135deg, #4f46e5 0%, #312e81 100%)"
+                title: "Certified Talent",
+                desc: "A vast network of SAP, AWS, and Azure certified consultants ready to deploy globally.",
+                icon: <Shield size={28} color="#4f46e5" />
               },
               {
-                title: "Robust Revenue Model",
-                desc: "Sustainable growth driven by long-term client engagements, strategic transformation programs, and managed services partnerships.",
-                icon: <Shield size={32} color="#fff" />,
-                gradient: "linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%)"
+                title: "Agile Delivery",
+                desc: "Sprint-based implementation models ensuring transparency, speed, and continuous feedback.",
+                icon: <Zap size={28} color="#0ea5e9" />
               },
               {
-                title: "Unmatched Talent Pool",
-                desc: "A rapidly growing team of certified consultants across global delivery locations, enabling scalable and high-quality program execution.",
-                icon: <Users size={32} color="#fff" />,
-                gradient: "linear-gradient(135deg, #8b5cf6 0%, #5b21b6 100%)"
+                title: "Global Reach",
+                desc: "Offshore, nearshore, and onsite delivery centers providing optimized cost-arbitrage.",
+                icon: <Globe size={28} color="#8b5cf6" />
+              },
+              {
+                title: "Domain Knowledge",
+                desc: "Deep industry expertise across Manufacturing, BFSI, Retail, and Life Sciences sectors.",
+                icon: <Target size={28} color="#f59e0b" />
               }
             ].map((item, idx) => (
               <motion.div
                 key={idx}
                 variants={fadeIn}
-                whileHover={{ y: -8, boxShadow: "0 25px 50px -12px rgba(0,0,0,0.1)" }}
+                whileHover={{ y: -8 }}
                 style={{
-                  background: "white",
-                  padding: "40px 32px",
+                  background: "#f8fafc",
+                  padding: "32px",
                   borderRadius: "24px",
-                  boxShadow: "0 10px 30px rgba(0,0,0,0.03)",
-                  border: "1px solid rgba(226, 232, 240, 0.6)",
+                  border: "1px solid rgba(226, 232, 240, 0.8)",
                   transition: "all 0.3s ease"
                 }}
               >
                 <div style={{
-                  background: item.gradient,
-                  width: "68px",
-                  height: "68px",
-                  borderRadius: "20px",
+                  background: "white",
+                  width: "56px",
+                  height: "56px",
+                  borderRadius: "16px",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  marginBottom: "28px",
-                  boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)"
+                  marginBottom: "20px",
+                  boxShadow: "0 10px 20px rgba(0, 0, 0, 0.05)"
                 }}>
                   {item.icon}
                 </div>
-                <h3 style={{ fontSize: "22px", fontWeight: "700", color: "#0f172a", marginBottom: "16px" }}>{item.title}</h3>
-                <p style={{ color: "#64748b", lineHeight: "1.7", fontSize: "16px" }}>{item.desc}</p>
+                <h3 style={{ fontSize: "20px", fontWeight: "700", color: "#0f172a", marginBottom: "12px" }}>{item.title}</h3>
+                <p style={{ color: "#64748b", lineHeight: "1.6", fontSize: "15px" }}>{item.desc}</p>
+
               </motion.div>
             ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Corporate Governance & Stock Info */}
-      <section style={{ padding: "80px 6%", background: "white", borderTop: "1px solid #f1f5f9", borderBottom: "1px solid #f1f5f9" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "60px", alignItems: "center" }}>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} style={{ flex: "1 1 500px" }}>
-            <h2 style={{ fontSize: "clamp(32px, 4vw, 40px)", fontWeight: "800", color: "#0f172a", marginBottom: "24px", letterSpacing: "-1px" }}>Commitment to Transparency & Growth</h2>
-            <p style={{ fontSize: "18px", color: "#64748b", marginBottom: "32px", lineHeight: "1.7" }}>
-              At Galacticos Network, we uphold the highest standards of corporate governance. We believe that transparent operations build continuous trust and drive long-term shareholder value.
-            </p>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "16px" }}>
-              {["Leadership & Governance Framework", "Financial Performance Overview", "Strategic Growth Roadmap", "Risk & Compliance Practices"].map((item, idx) => (
-                <li key={idx} style={{ display: "flex", alignItems: "center", gap: "16px", color: "#334155", fontWeight: "600", fontSize: "16px", cursor: "pointer" }}>
-                  <div style={{ background: "#f1f5f9", padding: "8px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <ChevronRight size={18} color="#4f46e5" />
-                  </div>
-                  <span style={{ transition: "color 0.2s" }} onMouseOver={(e) => e.target.style.color = "#4f46e5"} onMouseOut={(e) => e.target.style.color = "#334155"}>
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} style={{ flex: "1 1 400px", background: "#f8fafc", padding: "40px", borderRadius: "32px", border: "1px solid #e2e8f0", position: "relative", overflow: "hidden" }}>
-            <svg width="100%" height="200" viewBox="0 0 400 200" style={{ overflow: "visible" }}>
-              {/* Decorative animated chart */}
-              <defs>
-                <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#4f46e5" stopOpacity="0.2" />
-                  <stop offset="100%" stopColor="#4f46e5" stopOpacity="0" />
-                </linearGradient>
-              </defs>
-              <motion.path
-                initial={{ pathLength: 0 }}
-                whileInView={{ pathLength: 1 }}
-                transition={{ duration: 2.5, ease: "easeOut" }}
-                viewport={{ once: true }}
-                d="M 0,160 C 50,160 100,70 150,90 C 200,110 250,40 300,60 C 350,80 380,20 400,10"
-                fill="none"
-                stroke="#4f46e5"
-                strokeWidth="4"
-                strokeLinecap="round"
-              />
-              <motion.path
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 1.5 }}
-                viewport={{ once: true }}
-                d="M 0,160 C 50,160 100,70 150,90 C 200,110 250,40 300,60 C 350,80 380,20 400,10 L 400,200 L 0,200 Z"
-                fill="url(#chartGradient)"
-              />
-              <motion.circle initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ delay: 2.1 }} viewport={{ once: true }} cx="400" cy="10" r="6" fill="#4f46e5" stroke="white" strokeWidth="2" />
-              <motion.circle initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ delay: 0.8 }} viewport={{ once: true }} cx="150" cy="90" r="5" fill="#4f46e5" stroke="white" strokeWidth="2" />
-              <motion.circle initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ delay: 1.6 }} viewport={{ once: true }} cx="300" cy="60" r="5" fill="#4f46e5" stroke="white" strokeWidth="2" />
-            </svg>
-            <div style={{ marginTop: "40px", textAlign: "center", position: "relative", zIndex: 2 }}>
-              <h4 style={{ fontSize: "16px", fontWeight: "700", color: "#64748b", marginBottom: "8px", textTransform: "uppercase", letterSpacing: "1px" }}>Investment Highlights</h4>
-              <p style={{ fontSize: "48px", fontWeight: "800", color: "#0f172a", display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", letterSpacing: "-1px" }}>
-                 <span style={{ color: "#10b981", display: "flex", alignItems: "center" }}><TrendingUp size={32} /></span>
-              </p>
-              <p style={{ color: "#10b981", fontSize: "16px", fontWeight: "600", marginTop: "8px", background: "rgba(16, 185, 129, 0.1)", display: "inline-block", padding: "4px 12px", borderRadius: "20px" }}>High-growth digital transformation market  
-Strong enterprise client portfolio  
-Scalable global delivery model  
-Experienced leadership team</p>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -262,14 +510,14 @@ Experienced leadership team</p>
           viewport={{ once: true }}
           variants={fadeIn}
           style={{
-            background: "linear-gradient(135deg, #4f46e5 0%, #1e1b4b 100%)",
+            background: "linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)",
             borderRadius: "32px",
             padding: "80px 40px",
             textAlign: "center",
             color: "white",
             maxWidth: "1100px",
             margin: "0 auto",
-            boxShadow: "0 25px 50px -12px rgba(79, 70, 229, 0.25)",
+            boxShadow: "0 25px 50px -12px rgba(49, 46, 129, 0.3)",
             position: "relative",
             overflow: "hidden"
           }}
@@ -279,17 +527,17 @@ Experienced leadership team</p>
           <div style={{ position: "absolute", bottom: "-50%", right: "-10%", width: "600px", height: "600px", border: "2px solid rgba(255,255,255,0.05)", borderRadius: "50%" }}></div>
 
           <div style={{ position: "relative", zIndex: 2 }}>
-            <h2 style={{ fontSize: "clamp(32px, 4vw, 48px)", fontWeight: "800", marginBottom: "24px", letterSpacing: "-1px" }}>Ready to partner with us?</h2>
+            <h2 style={{ fontSize: "clamp(32px, 4vw, 48px)", fontWeight: "800", marginBottom: "24px", letterSpacing: "-1px" }}>Ready to transform your enterprise?</h2>
             <p style={{ fontSize: "20px", color: "#c7d2fe", maxWidth: "600px", margin: "0 auto 48px auto", lineHeight: "1.6" }}>
-             Connect with our leadership team to explore strategic partnerships and long-term investment opportunities in our high-growth digital transformation journey.
+              Engage with our technology experts to discuss your IT landscape, blueprint a modernization strategy, and accelerate your digital journey.
             </p>
             <motion.button
               onClick={() => navigate('/contact')}
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2)" }}
+              whileHover={{ scale: 1.05, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.3)" }}
               whileTap={{ scale: 0.95 }}
-              style={{ background: "white", color: "#4f46e5", border: "none", padding: "20px 48px", borderRadius: "16px", fontSize: "18px", fontWeight: "700", cursor: "pointer", transition: "all 0.2s" }}
+              style={{ background: "white", color: "#1e1b4b", border: "none", padding: "20px 48px", borderRadius: "16px", fontSize: "18px", fontWeight: "700", cursor: "pointer", transition: "all 0.2s" }}
             >
-              Contact Investor Relations
+              Contact Our Experts
             </motion.button>
           </div>
         </motion.div>

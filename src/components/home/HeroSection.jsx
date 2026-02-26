@@ -1,6 +1,8 @@
+
+
 import React, { useEffect, useState, useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { ChevronLeft, ChevronRight, Cpu, Activity, Globe, Shield, Database } from "lucide-react";
+import { ChevronLeft, ChevronRight, Globe, Shield, Database, Activity, Zap, Lock, Layers, BarChart2, Cpu, Network } from "lucide-react";
 import {
   LineChart, Line, AreaChart, Area, BarChart, Bar,
   ComposedChart, PieChart, Pie, Cell,
@@ -8,11 +10,11 @@ import {
 } from "recharts";
 
 // Data generator for the live-moving effect
-const generateData = () => 
-  Array.from({ length: 15 }, (_, i) => ({ 
-    name: i, 
+const generateData = () =>
+  Array.from({ length: 15 }, (_, i) => ({
+    name: i,
     val: Math.floor(Math.random() * 400) + 200,
-    val2: Math.floor(Math.random() * 200) + 150 
+    val2: Math.floor(Math.random() * 200) + 150
   }));
 
 export default function PremiumVanguardHero() {
@@ -34,77 +36,118 @@ export default function PremiumVanguardHero() {
 
   const slides = useMemo(() => [
     {
-      title: "NEURAL NETWORK",
-      subtitle: "Edge-computing nodes processing petabytes of telemetry via AI nodes.",
       label: "AI_NODE_ACTIVE",
-      icon: <Cpu size={18} />,
-      color: "#00d2ff",
-      bg: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1600&q=80",
+      title: "Cognitive routing and intelligent data processing",
+      subtitle: "Edge-computing nodes processing petabytes of telemetry via decentralized AI orchestrators.",
+      color: "#007BFF", // Bright Blue
+      features: [
+        { icon: <Cpu strokeWidth={1.5} size={20} />, text: "Self-Healing Networks" },
+        { icon: <Zap strokeWidth={1.5} size={20} />, text: "Zero Latency" },
+        { icon: <Shield strokeWidth={1.5} size={20} />, text: "Quantum Ready" },
+        { icon: <Globe strokeWidth={1.5} size={20} />, text: "Global Scope" }
+      ],
+      badges: [
+        { text: "99.9% Efficiency", top: "5%", right: "-5%" },
+        { text: "AI Optimized", bottom: "15%", left: "-10%" }
+      ],
       chart: (d) => (
         <AreaChart data={d}>
           <defs>
             <linearGradient id="c1" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#00d2ff" stopOpacity={0.6}/>
-              <stop offset="95%" stopColor="#00d2ff" stopOpacity={0}/>
+              <stop offset="5%" stopColor="#007BFF" stopOpacity={0.6} />
+              <stop offset="95%" stopColor="#FF00AA" stopOpacity={0} />
             </linearGradient>
           </defs>
-          <Area type="monotone" dataKey="val" stroke="#00d2ff" strokeWidth={3} fill="url(#c1)" />
+          <Area type="monotone" dataKey="val" stroke="#007BFF" strokeWidth={2} fill="url(#c1)" />
+          <Line type="monotone" dataKey="val2" stroke="#FF00AA" strokeWidth={1.5} dot={false} />
         </AreaChart>
       )
     },
     {
-      title: "MARKET VELOCITY",
-      subtitle: "High-frequency analysis across global crypto and equity exchanges.",
       label: "MARKET_SYNC_04",
-      icon: <Activity size={18} />,
-      color: "#ff0080",
-      bg: "https://images.unsplash.com/photo-1642104704074-907c0698cbd9?auto=format&fit=crop&w=1600&q=80",
+      title: "High-frequency analysis for decentralized systems",
+      subtitle: "Zero-latency market data synchronization and algorithmic pipeline execution platforms.",
+      color: "#00E5FF", // Cyan
+      features: [
+        { icon: <Activity strokeWidth={1.5} size={20} />, text: "Real-time Sync" },
+        { icon: <Layers strokeWidth={1.5} size={20} />, text: "Multi-layer Comm" },
+        { icon: <Lock strokeWidth={1.5} size={20} />, text: "Encrypted Ledgers" },
+        { icon: <BarChart2 strokeWidth={1.5} size={20} />, text: "Live Analytics" }
+      ],
+      badges: [
+        { text: "0.2ms Latency", top: "10%", left: "-5%" },
+        { text: "HFT Ready", bottom: "10%", right: "-5%" }
+      ],
       chart: (d) => (
         <BarChart data={d}>
-          <Bar dataKey="val" fill="#ff0080" radius={[2, 2, 0, 0]} />
-          <Bar dataKey="val2" fill="rgba(255,255,255,0.15)" radius={[2, 2, 0, 0]} />
+          <Bar dataKey="val" fill="#00E5FF" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="val2" fill="rgba(112,0,255,0.4)" radius={[4, 4, 0, 0]} />
         </BarChart>
       )
     },
     {
-      title: "GLOBAL MESH",
-      subtitle: "Zero-latency peering across 12 availability zones world-wide.",
       label: "NETWORK_HEALTH_99",
-      icon: <Globe size={18} />,
-      color: "#39ff14",
-      bg: "https://images.unsplash.com/photo-1504333638930-c8787321eee0?auto=format&fit=crop&w=1600&q=80",
+      title: "Zero-latency peering across global meshes",
+      subtitle: "Unifying 12 availability zones world-wide for immediate, uninterrupted connectivity.",
+      color: "#39FF14", // Neon Green
+      features: [
+        { icon: <Network strokeWidth={1.5} size={20} />, text: "Mesh Topology" },
+        { icon: <Globe strokeWidth={1.5} size={20} />, text: "12 Global Zones" },
+        { icon: <Zap strokeWidth={1.5} size={20} />, text: "Instant Failover" },
+        { icon: <Shield strokeWidth={1.5} size={20} />, text: "Edge Security" }
+      ],
+      badges: [
+        { text: "100 Gbps Peering", top: "40%", right: "-12%" },
+        { text: "Zero Drops", bottom: "5%", left: "5%" }
+      ],
       chart: (d) => (
         <LineChart data={d}>
-          <Line type="stepAfter" dataKey="val" stroke="#39ff14" strokeWidth={3} dot={false} />
-          <Line type="stepAfter" dataKey="val2" stroke="rgba(255,255,255,0.2)" strokeWidth={2} dot={false} strokeDasharray="5 5" />
+          <Line type="stepAfter" dataKey="val" stroke="#39FF14" strokeWidth={3} dot={false} />
+          <Line type="stepAfter" dataKey="val2" stroke="rgba(255,255,255,0.3)" strokeWidth={2} dot={false} strokeDasharray="5 5" />
         </LineChart>
       )
     },
     {
-      title: "CLOUD SHIELD",
-      subtitle: "Advanced DDoS mitigation and neural-firewall protection suites.",
       label: "FIREWALL_ARMED",
-      icon: <Shield size={18} />,
-      color: "#7000ff",
-      bg: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80",
+      title: "Quantum-ready protection for next-gen enterprises",
+      subtitle: "Deploying advanced neural firewalls and autonomous threat mitigation to secure critical data assets.",
+      color: "#7000FF", // Purple
+      features: [
+        { icon: <Shield strokeWidth={1.5} size={20} />, text: "Zero Trust" },
+        { icon: <Activity strokeWidth={1.5} size={20} />, text: "Auto Mitigation" },
+        { icon: <Database strokeWidth={1.5} size={20} />, text: "Cold Storage" },
+        { icon: <Lock strokeWidth={1.5} size={20} />, text: "Post-Quantum" }
+      ],
+      badges: [
+        { text: "DDoS Protected", top: "-5%", right: "10%" },
+        { text: "SOC2 Certified", bottom: "5%", left: "5%" }
+      ],
       chart: (d) => (
         <ComposedChart data={d}>
-          <Area type="monotone" dataKey="val" fill="rgba(112, 0, 255, 0.25)" stroke="#7000ff" strokeWidth={3} />
-          <Line type="monotone" dataKey="val2" stroke="#fff" strokeWidth={2} dot={{ r: 4, fill: '#7000ff' }} />
+          <Area type="monotone" dataKey="val" fill="rgba(112, 0, 255, 0.25)" stroke="#7000FF" strokeWidth={3} />
+          <Line type="monotone" dataKey="val2" stroke="#fff" strokeWidth={2} dot={{ r: 4, fill: '#7000FF' }} />
         </ComposedChart>
       )
     },
     {
-      title: "DATA VAULT",
-      subtitle: "256-bit quantum-ready encryption for enterprise cold storage.",
       label: "ENCRYPTION_SAFE",
-      icon: <Database size={18} />,
-      color: "#faff00",
-      bg: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=80",
+      title: "256-bit encrypted data vault solutions",
+      subtitle: "Immutable, globally distributed storage infrastructures built for regulatory compliance and immense scale.",
+      color: "#FAFF00", // Yellow
+      features: [
+        { icon: <Lock strokeWidth={1.5} size={20} />, text: "256-Bit Standard" },
+        { icon: <Database strokeWidth={1.5} size={20} />, text: "Immutable Ledgers" },
+        { icon: <Shield strokeWidth={1.5} size={20} />, text: "Compliance Init" },
+        { icon: <Layers strokeWidth={1.5} size={20} />, text: "Scale Ready" }
+      ],
+      badges: [
+        { text: "Cold Stored", top: "15%", left: "-5%" },
+        { text: "Always Verifiable", bottom: "10%", right: "-8%" }
+      ],
       chart: (d) => (
         <PieChart>
           <Pie data={d} dataKey="val" innerRadius="65%" outerRadius="85%" paddingAngle={6}>
-            {d.map((_, i) => <Cell key={i} fill={i % 3 === 0 ? "#faff00" : "rgba(255,255,255,0.05)"} />)}
+            {d.map((_, i) => <Cell key={i} fill={i % 3 === 0 ? "#FAFF00" : "rgba(255,255,255,0.05)"} />)}
           </Pie>
         </PieChart>
       )
@@ -115,14 +158,14 @@ export default function PremiumVanguardHero() {
   const prev = () => setActive(p => (p - 1 + slides.length) % slides.length);
 
   useEffect(() => {
-    const timer = setInterval(next, 5000);
+    const timer = setInterval(next, 7000);
     return () => clearInterval(timer);
   }, [next]);
 
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
 
         * {
           margin: 0;
@@ -134,43 +177,89 @@ export default function PremiumVanguardHero() {
           position: relative;
           height: 100vh;
           width: 100%;
-          background: #000;
+          padding-top: 80px; /* Adjust for sticky navbar height, preventing overlap */
+          background: #050914; /* Deep cyber blue */
           font-family: 'Plus Jakarta Sans', sans-serif;
           overflow: hidden;
           color: white;
-        }
-
-        .h-bg-canvas {
-          position: absolute;
-          inset: 0;
-          background-size: cover;
-          background-position: center;
-          transition: background-image 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-          z-index: 1;
-        }
-
-        .h-bg-canvas::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(circle at center, rgba(0,0,0,0.4), #000 95%);
-        }
-
-        .h-dashboard {
-          position: absolute;
-          top: 50%; 
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 90vw; 
-          height: 80vh;
-          background: rgba(10, 10, 10, 0.5);
-          backdrop-filter: blur(40px) saturate(1.5);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 48px;
-          z-index: 10;
           display: flex;
-          overflow: hidden;
-          box-shadow: 0 80px 150px -40px rgba(0,0,0,0.9);
+          align-items: center;
+        }
+
+        /* ---------------------------------
+           BACKGROUND GLOWS & PARTICLES
+           --------------------------------- */
+        .h-glow {
+          position: absolute;
+          border-radius: 50%;
+          filter: blur(100px);
+          opacity: 0.35;
+          z-index: 0;
+          animation: breatheGlow 10s infinite alternate;
+        }
+
+        .glow-1 { top: 0%; left: 10%; width: 50vw; height: 50vh; background: rgba(0, 123, 255, 0.5); }
+        .glow-2 { bottom: 0%; right: 10%; width: 50vw; height: 50vh; background: rgba(255, 0, 170, 0.4); }
+
+        @keyframes breatheGlow {
+          from { transform: scale(1); opacity: 0.25; }
+          to { transform: scale(1.1); opacity: 0.45; }
+        }
+
+        /* ---------------------------------
+           CIRCUIT BACKGROUND (SVG)
+           --------------------------------- */
+        .h-circuit-bg {
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          pointer-events: none;
+        }
+
+        .circuit-line {
+          fill: none;
+          stroke-width: 2;
+          opacity: 0.7;
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation: drawCircuit 12s infinite linear;
+        }
+
+        .circuit-line.magenta { stroke: #FF00AA; filter: drop-shadow(0 0 10px #FF00AA); }
+        .circuit-line.cyan { stroke: #00E5FF; filter: drop-shadow(0 0 10px #00E5FF); }
+
+        @keyframes drawCircuit {
+          0% { stroke-dashoffset: 1000; }
+          50% { stroke-dashoffset: 0; }
+          100% { stroke-dashoffset: -1000; }
+        }
+
+        /* Particles */
+        .particles {
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          background-image: 
+            radial-gradient(circle at center, rgba(255,255,255,0.8) 0, rgba(255,255,255,0) 2px),
+            radial-gradient(circle at center, rgba(255,255,255,0.6) 0, rgba(255,255,255,0) 1.5px);
+          background-size: 100px 100px, 150px 150px;
+          background-position: 0 0, 50px 50px;
+          opacity: 0.25;
+          animation: particleDrift 80s linear infinite;
+        }
+
+        @keyframes particleDrift {
+          to { background-position: 1000px 1000px, 1050px 1050px; }
+        }
+
+        /* ---------------------------------
+           SLIDER LAYOUT
+           --------------------------------- */
+        .h-slider-container {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          z-index: 10;
         }
 
         .h-slide {
@@ -178,557 +267,400 @@ export default function PremiumVanguardHero() {
           inset: 0;
           display: flex;
           align-items: center;
-          padding: 0 8%;
+          justify-content: center;
+          gap: 8%;
+          padding: 0 10% 60px 10%;
           opacity: 0;
-          transition: opacity 0.8s ease, transform 0.8s ease;
-          pointer-events: none;
+          visibility: hidden;
+          transition: opacity 0.8s ease, visibility 0.8s, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+          transform: translateY(20px);
         }
 
         .h-slide.active { 
           opacity: 1; 
-          pointer-events: all; 
+          visibility: visible;
+          transform: translateY(0);
         }
 
-        .h-text-col { 
-          flex: 1.2; 
-          z-index: 20; 
+        /* ---------------------------------
+           LEFT COL: VISUALIZATION (GLASS)
+           --------------------------------- */
+        .h-viz-col {
+          flex: 0.9;
+          max-width: 500px;
+          aspect-ratio: 1;
+          position: relative;
+        }
+
+        .h-glass-card {
+          width: 100%;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 24px;
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          padding: 40px;
+          box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 0 20px rgba(255,255,255,0.03);
+          position: relative;
+          z-index: 2;
+        }
+
+        .h-glass-content {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          z-index: 3;
+        }
+
+        /* Badge Pills */
+        .h-badge {
+          position: absolute;
+          background: rgba(14, 25, 45, 0.9);
+          border: 1px solid rgba(255,255,255,0.15);
+          color: white;
+          padding: 10px 22px;
+          border-radius: 100px;
+          font-size: 0.85rem;
+          font-weight: 700;
+          backdrop-filter: blur(10px);
+          z-index: 10;
+          box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+          animation: floatBadge 4s ease-in-out infinite alternate;
+          white-space: nowrap;
+        }
+
+        @keyframes floatBadge {
+          from { transform: translateY(0); }
+          to { transform: translateY(-8px); }
+        }
+
+        /* ---------------------------------
+           RIGHT COL: CONTENT
+           --------------------------------- */
+        .h-text-col {
+          flex: 1.1;
+          max-width: 700px;
         }
 
         .h-label {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          padding: 8px 16px;
-          background: rgba(255,255,255,0.05);
-          border-radius: 100px;
-          font-size: 0.75rem;
-          font-weight: 700;
+          color: #007BFF;
+          font-size: 0.85rem;
+          font-weight: 800;
           letter-spacing: 2px;
-          margin-bottom: 24px;
+          text-transform: uppercase;
+          margin-bottom: 20px;
+          display: block;
+          text-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
         }
 
         .h-text-col h1 {
-          font-size: clamp(3rem, 6vw, 6rem);
+          font-size: clamp(2rem, 3.5vw, 3rem);
           font-weight: 800;
-          line-height: 0.9;
-          margin-bottom: 20px;
-          letter-spacing: -3px;
+          line-height: 1.15;
+          margin-bottom: 24px;
+          color: #fff;
+          letter-spacing: -0.5px;
+          text-wrap: balance;
         }
 
         .h-text-col p {
-          color: #aaa;
-          font-size: 1.25rem;
-          max-width: 480px;
+          color: #94A3B8;
+          font-size: 1.15rem;
+          line-height: 1.6;
           margin-bottom: 40px;
+          max-width: 600px;
+          text-wrap: balance;
         }
 
-        .h-viz-col {
-          flex: 1;
-          height: 55%;
+        /* Features Grid */
+        .h-features {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 25px 40px;
+          margin-bottom: 50px;
+        }
+
+        .h-feature {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          font-size: 1rem;
+          font-weight: 600;
+          color: #E2E8F0;
+        }
+
+        .h-feature-icon {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
         }
 
+        /* CTA Button */
         .h-btn {
-          padding: 18px 45px;
-          border-radius: 100px;
+          color: #fff;
           border: none;
-          font-weight: 800;
-          font-size: 0.9rem;
+          padding: 18px 42px;
+          border-radius: 100px;
+          font-size: 1.05rem;
+          font-weight: 700;
           cursor: pointer;
-          transition: 0.3s;
-          text-transform: uppercase;
-          box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
         }
 
-        .h-btn:hover { 
-          transform: translateY(-3px) scale(1.05); 
-        }
-
-        .h-nav-dots {
+        .h-btn::before {
+          content: "";
           position: absolute;
-          bottom: 48px; 
-          left: 8%;
-          display: flex; 
+          inset: 0;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+          transform: translateX(-100%);
+          z-index: -1;
+          transition: 0.5s;
+        }
+
+        .h-btn:hover {
+          transform: translateY(-3px);
+          filter: brightness(1.2);
+        }
+
+        .h-btn:hover::before {
+          transform: translateX(100%);
+        }
+
+        /* ---------------------------------
+           NAVIGATION (Bottom Left)
+           --------------------------------- */
+        .h-nav-controls {
+          position: absolute;
+          bottom: 50px;
+          left: 10%;
+          display: flex;
+          align-items: center;
+          gap: 25px;
+          z-index: 20;
+        }
+
+        .h-dots {
+          display: flex;
           gap: 12px;
-          z-index: 30;
         }
 
         .h-dot {
-          width: 30px; 
-          height: 4px;
-          background: rgba(255,255,255,0.1);
-          border-radius: 2px;
-          cursor: pointer;
-          transition: 0.4s;
-        }
-
-        .h-dot.active { 
-          background: #fff; 
-          width: 60px; 
-          box-shadow: 0 0 15px rgba(255,255,255,0.5); 
-        }
-
-        .h-side-arrows {
-          position: absolute;
-          bottom: 40px; 
-          right: 48px;
-          display: flex; 
-          gap: 15px;
-          z-index: 30;
-        }
-
-        .h-arrow-btn {
-          width: 56px; 
-          height: 56px;
+          width: 10px;
+          height: 10px;
           border-radius: 50%;
-          background: rgba(255,255,255,0.03);
+          background: rgba(255,255,255,0.2);
+          cursor: pointer;
+          transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .h-dot.active {
+          background: #007BFF;
+          box-shadow: 0 0 15px #007BFF;
+          transform: scale(1.3);
+        }
+
+        .h-arrows {
+          display: flex;
+          gap: 12px;
+          margin-left: 20px;
+        }
+
+        .h-arrow {
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background: rgba(255,255,255,0.05);
           border: 1px solid rgba(255,255,255,0.1);
           color: white;
-          cursor: pointer; 
-          transition: 0.3s;
-          display: flex; 
-          align-items: center; 
+          display: flex;
+          align-items: center;
           justify-content: center;
+          cursor: pointer;
+          transition: 0.3s;
+          backdrop-filter: blur(5px);
         }
 
-        .h-arrow-btn:hover { 
-          background: #fff; 
-          color: #000; 
+        .h-arrow:hover {
+          background: #007BFF;
+          border-color: #007BFF;
+          transform: scale(1.1);
+          box-shadow: 0 5px 15px rgba(0,123,255,0.4);
         }
 
-        /* Desktop Large */
-        @media (max-width: 1400px) {
-          .h-text-col h1 {
-            font-size: 5rem;
-          }
-          .h-text-col p {
-            font-size: 1.15rem;
-          }
+        /* Bottom right decorative spark */
+        .h-spark {
+          position: absolute;
+          bottom: 40px;
+          right: 50px;
+          color: rgba(255,255,255,0.4);
+          z-index: 10;
+          animation: pulseSpark 4s infinite alternate;
         }
 
-        /* Desktop Medium */
+        @keyframes pulseSpark {
+          to { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        /* ---------------------------------
+           RESPONSIVE
+           --------------------------------- */
         @media (max-width: 1200px) {
-          .h-text-col h1 {
-            font-size: 4.5rem;
-            letter-spacing: -2px;
-          }
-          .h-text-col p {
-            font-size: 1.1rem;
-          }
+          .h-slide { gap: 5%; padding: 0 5%; }
+          .h-text-col h1 { font-size: 3.5rem; }
         }
 
-        /* Tablet Landscape */
-        @media (max-width: 992px) {
-          .h-dashboard { 
-            width: 92vw; 
-            height: 85vh; 
-            border-radius: 40px; 
-          }
-          .h-text-col h1 {
-            font-size: 3.8rem;
-          }
-          .h-text-col p {
-            font-size: 1rem;
-          }
-          .h-btn {
-            padding: 16px 40px;
-            font-size: 0.85rem;
-          }
+        @media (max-width: 1024px) {
+          .h-slide { flex-direction: column-reverse; padding: 100px 5% 60px; gap: 40px; text-align: center; }
+          .h-viz-col { max-width: 400px; width: 100%; aspect-ratio: auto; height: 350px; }
+          .h-text-col { max-width: 100%; display: flex; flex-direction: column; align-items: center; }
+          .h-features { text-align: left; }
+          .h-label { margin-bottom: 15px; }
+          .h-text-col h1 { font-size: 3rem; margin-bottom: 16px; }
+          .h-text-col p { margin: 0 auto 30px; }
+          .h-nav-controls { left: 50%; transform: translateX(-50%); bottom: 20px; }
+          .h-spark { display: none; }
         }
 
-        /* Tablet Portrait */
         @media (max-width: 768px) {
-          .h-dashboard { 
-            flex-direction: column; 
-            width: 94vw; 
-            height: 75vh; /* Compressed from 90vh */
-            border-radius: 32px; 
-          }
-          .h-slide { 
-            flex-direction: column; 
-            justify-content: flex-start;
-            text-align: center; 
-            padding: 30px 20px; /* Reduced padding */
-            gap: 15px; /* Reduced gap */
-          }
-          .h-text-col { 
-            flex: none;
-            width: 100%;
-            margin-top: 15px; /* Reduced margin */
-          }
-          .h-text-col h1 { 
-            font-size: 2.8rem; /* Smaller font */
-            letter-spacing: -1.5px;
-            max-width: 500px; /* Reduced width */
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 12px; /* Reduced margin */
-          }
-          .h-text-col p {
-            font-size: 0.95rem !important;
-            max-width: 450px; /* Reduced width */
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 25px; /* Reduced margin */
-            line-height: 1.4;
-          }
-          .h-viz-col { 
-            flex: none;
-            width: 100%; 
-            height: 28%; /* Compressed from 30% */
-            margin-top: 8px; /* Reduced margin */
-          }
-          .h-btn { 
-            padding: 14px 32px; /* Slightly smaller */
-            font-size: 0.8rem;
-          }
-          .h-label {
-            font-size: 0.65rem;
-            padding: 5px 12px; /* Smaller padding */
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 12px; /* Reduced margin */
-          }
-          .h-nav-dots { 
-            left: 50%; 
-            transform: translateX(-50%); 
-            bottom: 65px; /* Adjusted position */
-          }
-          .h-side-arrows { 
-            right: 50%; 
-            transform: translateX(50%); 
-            bottom: 15px; /* Adjusted position */
-          }
-        }
-
-        /* Mobile Large */
-        @media (max-width: 640px) {
-          .h-dashboard { 
-            width: 95vw; 
-            height: 72vh; /* Further compressed */
-            border-radius: 28px;
-          }
-          .h-slide { 
-            padding: 25px 16px; /* Reduced padding */
-            gap: 12px;
-          }
-          .h-text-col h1 { 
-            font-size: 2rem; 
-            line-height: 1;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-          }
-          .h-text-col p {
-            font-size: 0.85rem !important;
-            margin-bottom: 20px;
-            line-height: 1.4;
-          }
-          .h-btn { 
-            padding: 12px 28px; 
-            font-size: 0.75rem;
-          }
-          .h-label {
-            font-size: 0.6rem;
-            padding: 5px 10px;
-            margin-bottom: 10px;
-          }
-          .h-viz-col { 
-            height: 25%; 
-          }
-          .h-nav-dots { 
-            bottom: 55px; 
-            gap: 8px; 
-          }
-          .h-dot { 
-            width: 24px; 
-            height: 3px; 
-          }
-          .h-dot.active { 
-            width: 48px; 
-          }
-          .h-side-arrows { 
-            bottom: 12px; 
-            gap: 10px; 
-          }
-          .h-arrow-btn { 
-            width: 48px; 
-            height: 48px; 
-          }
-        }
-
-        /* Mobile Medium */
-        @media (max-width: 480px) {
-          .h-dashboard { 
-            width: 96vw; 
-            height: 70vh; /* Compressed */
-            border-radius: 24px;
-          }
-          .h-slide { 
-            padding: 22px 12px;
-            gap: 10px;
-          }
-          .h-text-col h1 { 
-            font-size: 1.7rem; 
-            margin-bottom: 10px;
-            letter-spacing: -0.8px;
-          }
-          .h-text-col p {
-            font-size: 0.8rem !important;
-            margin-bottom: 18px;
-            line-height: 1.35;
-          }
-          .h-btn { 
-            padding: 11px 24px; 
-            font-size: 0.7rem;
-          }
-          .h-label {
-            font-size: 0.55rem;
-            padding: 4px 9px;
-            gap: 5px;
-            margin-bottom: 10px;
-          }
-          .h-viz-col { 
-            height: 23%; 
-          }
-          .h-nav-dots { 
-            bottom: 50px; 
-            gap: 6px; 
-          }
-          .h-dot { 
-            width: 20px; 
-            height: 2.5px; 
-          }
-          .h-dot.active { 
-            width: 40px; 
-          }
-          .h-side-arrows { 
-            bottom: 10px; 
-            gap: 8px; 
-          }
-          .h-arrow-btn { 
-            width: 42px; 
-            height: 42px; 
-          }
-        }
-
-        /* Mobile Small */
-        @media (max-width: 375px) {
-          .h-dashboard { 
-            width: 97vw; 
-            height: 68vh; /* Compressed */
-            border-radius: 20px;
-          }
-          .h-slide { 
-            padding: 18px 10px;
-            gap: 8px;
-          }
-          .h-text-col h1 { 
-            font-size: 1.4rem; 
-            margin-bottom: 8px;
-            letter-spacing: -0.4px;
-          }
-          .h-text-col p {
-            font-size: 0.75rem !important;
-            margin-bottom: 15px;
-            line-height: 1.3;
-          }
-          .h-btn { 
-            padding: 10px 20px; 
-            font-size: 0.65rem;
-          }
-          .h-label {
-            font-size: 0.5rem;
-            padding: 4px 7px;
-            gap: 4px;
-            margin-bottom: 8px;
-          }
-          .h-viz-col { 
-            height: 21%; 
-          }
-          .h-nav-dots { 
-            bottom: 45px; 
-            gap: 4px; 
-          }
-          .h-dot { 
-            width: 16px; 
-            height: 2px; 
-          }
-          .h-dot.active { 
-            width: 32px; 
-          }
-          .h-side-arrows { 
-            bottom: 8px; 
-            gap: 6px; 
-          }
-          .h-arrow-btn { 
-            width: 36px; 
-            height: 36px; 
-          }
-        }
-
-        /* Extra Small Devices */
-        @media (max-width: 320px) {
-          .h-dashboard { 
-            width: 98vw; 
-            height: 66vh; /* Most compressed */
-            border-radius: 16px;
-          }
-          .h-slide { 
-            padding: 15px 8px;
-          }
-          .h-text-col h1 { 
-            font-size: 1.2rem; 
-            margin-bottom: 6px;
-          }
-          .h-text-col p {
-            font-size: 0.7rem !important;
-            margin-bottom: 12px;
-          }
-          .h-btn { 
-            padding: 8px 18px; 
-            font-size: 0.6rem;
-          }
-          .h-label {
-            font-size: 0.45rem;
-            padding: 3px 6px;
-            margin-bottom: 6px;
-          }
-          .h-viz-col { 
-            height: 20%; 
-          }
-          .h-nav-dots { 
-            bottom: 40px; 
-            gap: 3px; 
-          }
-          .h-dot { 
-            width: 14px; 
-            height: 2px; 
-          }
-          .h-dot.active { 
-            width: 28px; 
-          }
-          .h-side-arrows { 
-            bottom: 6px; 
-            gap: 4px; 
-          }
-          .h-arrow-btn { 
-            width: 32px; 
-            height: 32px; 
-          }
-        }
-
-        /* Landscape Mode for Mobile */
-        @media (max-height: 600px) and (orientation: landscape) {
-          .h-dashboard {
-            height: 80vh; /* Less compression in landscape */
-          }
-          .h-slide {
-            padding: 20px 5%;
-          }
-          .h-text-col h1 {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-          }
-          .h-text-col p {
-            font-size: 0.85rem !important;
-            margin-bottom: 12px;
-          }
-          .h-viz-col {
-            height: 32%;
-          }
-          .h-nav-dots {
-            bottom: 25px;
-          }
-          .h-side-arrows {
-            bottom: 15px;
-          }
-        }
-
-        /* Touch-friendly improvements */
-        @media (hover: none) and (pointer: coarse) {
-          .h-dot {
-            min-height: 8px;
-            min-width: 40px;
-          }
-          .h-dot.active {
-            min-width: 70px;
-          }
-          .h-arrow-btn {
-            min-width: 50px;
-            min-height: 50px;
-          }
-          .h-btn {
-            min-height: 50px;
-          }
+          .h-root { min-height: 100vh; padding-top: 80px; padding-bottom: 20px; align-items: center; justify-content: center; }
+          .h-slider-container { display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; position: relative; }
+          
+          /* Hide all complex elements to simplify mobile view */
+          .h-viz-col, .h-features, .h-nav-controls, .h-badge, .h-label, .h-spark { display: none !important; }
+          
+          /* Simplify slides to just the centered text column */
+          .h-slide { position: absolute; opacity: 0; visibility: hidden; transform: none; padding: 0 5%; width: 100%; top: 50%; transform: translateY(-50%); flex-direction: column; align-items: center; justify-content: center; left: 0; }
+          .h-slide.active { position: absolute; opacity: 1; visibility: visible; display: flex; transform: translateY(-50%); transition: opacity 0.8s ease; }
+          
+          .h-text-col { width: 100%; max-width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; }
+          .h-text-col h1 { font-size: 2.5rem; margin-bottom: 20px; text-wrap: balance; }
+          .h-text-col p { font-size: 1.1rem; margin-bottom: 30px; max-width: 90%; text-wrap: balance; }
+          
+          /* Native SVG scaling */
+          .h-circuit-bg { opacity: 0.6; }
         }
       `}</style>
 
       <div className="h-root">
-        {/* ANIMATED BACKGROUND */}
-        <div className="h-bg-canvas" style={{ backgroundImage: `url(${slides[active].bg})` }} />
-        
-        <div className="h-dashboard">
+
+        {/* Ambient Glows */}
+        <div className="h-glow glow-1" />
+        <div className="h-glow glow-2" />
+
+        {/* Particles */}
+        <div className="particles" />
+
+        {/* SVG Circuit Background */}
+        <div className="h-circuit-bg">
+          <svg width="100%" height="100%" viewBox="0 0 1600 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              {/* Cyan Traces */}
+              <path className="circuit-line cyan" d="M -50 300 L 200 300 L 250 350 L 600 350 L 650 300 L 1500 300" />
+              <path className="circuit-line cyan" d="M -50 700 L 150 700 L 200 750 L 400 750 L 450 700 L 800 700" />
+              <path className="circuit-line cyan" d="M 1200 -50 L 1200 150 L 1250 200 L 1600 200" />
+
+              {/* Magenta Traces */}
+              <path className="circuit-line magenta" d="M -50 450 L 300 450 L 350 500 L 700 500 L 750 450 L 1100 450 L 1150 500 L 1600 500" />
+              <path className="circuit-line magenta" d="M 850 1000 L 850 800 L 900 750 L 1600 750" />
+              <path className="circuit-line magenta" d="M 900 -50 L 900 100 L 950 150 L 1150 150" />
+            </g>
+          </svg>
+        </div>
+
+        {/* Slider */}
+        <div className="h-slider-container">
           {slides.map((slide, i) => (
             <div key={i} className={`h-slide ${i === active ? 'active' : ''}`}>
-              <div className="h-text-col">
-                <div className="h-label" style={{ color: slide.color }}>
-                  {slide.icon} {slide.label}
+
+              {/* Left Col: Visual */}
+              <div className="h-viz-col">
+                {/* Badges */}
+                {slide.badges?.map((badge, bIdx) => (
+                  <div
+                    key={bIdx}
+                    className="h-badge"
+                    style={{
+                      top: badge.top, bottom: badge.bottom, left: badge.left, right: badge.right,
+                      animationDelay: `${bIdx * 1.5}s`
+                    }}
+                  >
+                    {badge.text}
+                  </div>
+                ))}
+
+                <div className="h-glass-card">
+                  <div className="h-glass-content">
+                    <ResponsiveContainer width="100%" height="100%">
+                      {slide.chart(data)}
+                    </ResponsiveContainer>
+                  </div>
                 </div>
+              </div>
+
+              {/* Right Col: Content */}
+              <div className="h-text-col">
+                <span className="h-label" style={{ color: slide.color }}>{slide.label}</span>
                 <h1>{slide.title}</h1>
-                <p>
-                  {slide.subtitle}
-                </p>
-                <button 
-                  className="h-btn" 
-                  style={{ background: slide.color, color: '#000' }} 
-                  onClick={() => navigate('/contact')}
-                >
-                  EXPLORE PLATFORM
+                <p>{slide.subtitle}</p>
+
+                <div className="h-features">
+                  {slide.features.map((feat, fIdx) => (
+                    <div key={fIdx} className="h-feature">
+                      <div className="h-feature-icon" style={{ color: slide.color, borderColor: `${slide.color}60`, background: `${slide.color}15` }}>
+                        {feat.icon}
+                      </div>
+                      <span>{feat.text}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <button className="h-btn" style={{ background: slide.color, boxShadow: `0 10px 20px ${slide.color}50` }} onClick={() => navigate('/contact')}>
+                  Connect With Us
                 </button>
               </div>
 
-              <div className="h-viz-col">
-                <ResponsiveContainer width="100%" height="100%">
-                  {slide.chart(data)}
-                </ResponsiveContainer>
-              </div>
             </div>
           ))}
+        </div>
 
-          {/* DASHBOARD NAVIGATION */}
-          <div className="h-nav-dots">
+        {/* Navigation */}
+        <div className="h-nav-controls">
+          <div className="h-dots">
             {slides.map((_, i) => (
-              <div 
-                key={i} 
-                className={`h-dot ${i === active ? 'active' : ''}`} 
+              <div
+                key={i}
+                className={`h-dot ${i === active ? 'active' : ''}`}
+                style={{ background: i === active ? slides[active].color : '', boxShadow: i === active ? `0 0 15px ${slides[active].color}` : '' }}
                 onClick={() => setActive(i)}
-                role="button"
-                tabIndex={0}
-                aria-label={`Go to slide ${i + 1}`}
               />
             ))}
           </div>
-
-          <div className="h-side-arrows">
-            <button 
-              className="h-arrow-btn" 
-              onClick={prev}
-              aria-label="Previous slide"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button 
-              className="h-arrow-btn" 
-              onClick={next}
-              aria-label="Next slide"
-            >
-              <ChevronRight size={24} />
-            </button>
+          <div className="h-arrows">
+            <button className="h-arrow" onClick={prev}><ChevronLeft size={20} /></button>
+            <button className="h-arrow" onClick={next}><ChevronRight size={20} /></button>
           </div>
         </div>
+
+        {/* Bottom Spark Decorative */}
+        <div className="h-spark">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" opacity="0.8" />
+          </svg>
+        </div>
+
       </div>
     </>
   );
 }
+
+
+
+
+
