@@ -1,44 +1,82 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function HireAITalent() {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
+
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
+      { threshold: 0.1 }
+    );
+    if (sectionRef.current) obs.observe(sectionRef.current);
+
+    const handleMouseMove = (e) => {
+      if (!sectionRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      setMousePos({ x, y });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      obs.disconnect();
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
-    <section className="hire-ai-section">
+    <section
+      ref={sectionRef}
+      className="hire-ai-enhanced"
+      style={{ '--mouse-x': `${mousePos.x}%`, '--mouse-y': `${mousePos.y}%` }}
+    >
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
-        .hire-ai-section {
+        .hire-ai-enhanced {
           position: relative;
-          background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-          padding: 80px 6%;
-          color: #1e293b;
+          background: #020617; /* Deep midnight blue */
+          padding: 40px 6% 100px; /* Reduced top padding */
+          color: #f8fafc;
           overflow: hidden;
-          font-family: 'Inter', sans-serif;
+          font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
-        /* Subtle background elements */
-        .hire-ai-section::before {
+        /* Dynamic Spotlight Follower */
+        .hire-ai-enhanced::before {
           content: '';
           position: absolute;
-          top: -20%;
-          right: -10%;
-          width: 500px;
-          height: 500px;
-          background: radial-gradient(circle, rgba(99, 102, 241, 0.03) 0%, transparent 70%);
-          border-radius: 50%;
-          z-index: 1;
+          inset: 0;
+          background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(79, 70, 229, 0.15) 0%, transparent 40%);
+          z-index: 2;
+          pointer-events: none;
         }
 
-        .hire-ai-section::after {
-          content: '';
+        /* The Neural Mesh Background */
+        .neural-bg {
           position: absolute;
-          bottom: -20%;
-          left: -10%;
-          width: 500px;
-          height: 500px;
-          background: radial-gradient(circle, rgba(168, 85, 247, 0.03) 0%, transparent 70%);
-          border-radius: 50%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 800px;
+          height: 800px;
+          opacity: 0.4;
           z-index: 1;
+          pointer-events: none;
+        }
+
+        .mesh-sphere {
+          animation: rotateMesh 40s linear infinite;
+          transform-origin: center;
+        }
+
+        @keyframes rotateMesh {
+          from { transform: rotate(0deg) scale(1); }
+          to { transform: rotate(360deg) scale(1.1); }
         }
 
         .hire-ai-container {
@@ -48,332 +86,225 @@ export default function HireAITalent() {
           z-index: 10;
         }
 
-        /* Content area with optimized spacing */
         .hire-ai-content {
           text-align: center;
-          margin-bottom: 60px;
+          margin-bottom: 80px;
         }
 
-        /* Compact badge */
+        /* Floating Badge */
         .hire-ai-badge {
           display: inline-flex;
           align-items: center;
-          gap: 8px;
-          background: #ffffff;
-          padding: 6px 18px;
-          border-radius: 40px;
-          font-size: 12px;
+          gap: 10px;
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(10px);
+          padding: 8px 20px;
+          border-radius: 100px;
+          font-size: 13px;
           font-weight: 600;
-          margin-bottom: 20px;
-          color: #4f46e5;
-          border: 1px solid #e0e7ff;
-          box-shadow: 0 4px 10px rgba(99, 102, 241, 0.05);
+          margin-bottom: 24px;
+          color: #818cf8;
+          border: 1px solid rgba(129, 140, 248, 0.2);
+          box-shadow: 0 0 20px rgba(79, 70, 229, 0.1);
         }
 
-        .badge-icon svg {
-          width: 16px;
-          height: 16px;
-          stroke: #4f46e5;
-          stroke-width: 2;
-        }
-
-        /* Tight title spacing */
         .hire-ai-title {
-          font-size: clamp(36px, 5vw, 52px);
+          font-size: clamp(40px, 6vw, 64px);
           font-weight: 800;
-          margin-bottom: 16px;
-          line-height: 1.2;
-          color: #0f172a;
-          letter-spacing: -1px;
+          margin-bottom: 20px;
+          line-height: 1.1;
+          letter-spacing: -0.03em;
+          color: #ffffff;
         }
 
-        .hire-ai-title .highlight {
-          background: linear-gradient(145deg, #4f46e5, #9333ea);
+        .hire-ai-title span {
+          background: linear-gradient(to right, #818cf8, #c084fc, #818cf8);
+          background-size: 200% auto;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+          animation: textFlow 4s linear infinite;
         }
 
-        /* Compact description */
+        @keyframes textFlow {
+          to { background-position: 200% center; }
+        }
+
         .hire-ai-description {
-          font-size: 16px;
-          line-height: 1.6;
-          color: #475569;
-          max-width: 600px;
-          margin: 0 auto 30px;
-          font-weight: 400;
+          font-size: 18px;
+          color: #94a3b8;
+          max-width: 650px;
+          margin: 0 auto 40px;
+          line-height: 1.7;
         }
 
-        /* Refined CTA button */
+        /* Glass CTA */
         .hire-ai-cta {
+          position: relative;
           display: inline-flex;
           align-items: center;
-          gap: 10px;
+          gap: 12px;
           background: #4f46e5;
-          color: #ffffff;
-          padding: 14px 36px;
-          border-radius: 40px;
-          font-size: 16px;
-          font-weight: 600;
+          color: white;
+          padding: 18px 44px;
+          border-radius: 16px;
+          font-size: 17px;
+          font-weight: 700;
           text-decoration: none;
-          transition: all 0.3s ease;
-          box-shadow: 0 10px 20px -8px rgba(79, 70, 229, 0.3);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          box-shadow: 0 20px 40px -10px rgba(79, 70, 229, 0.4);
+          border: 1px solid rgba(255,255,255,0.2);
         }
 
         .hire-ai-cta:hover {
-          background: #4338ca;
-          transform: translateY(-2px);
-          box-shadow: 0 15px 25px -10px #4f46e5;
+          transform: translateY(-5px) scale(1.02);
+          background: #6366f1;
+          box-shadow: 0 25px 50px -12px rgba(79, 70, 229, 0.6);
         }
 
-        .cta-arrow {
-          transition: transform 0.2s ease;
-          font-size: 18px;
-        }
-
-        .hire-ai-cta:hover .cta-arrow {
-          transform: translateX(4px);
-        }
-
-        /* Compact Stats Grid */
+        /* Stats Grid - Glass Cards */
         .stats-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 20px;
+          gap: 24px;
         }
 
-        /* Streamlined stat items */
         .stat-item {
-          background: #ffffff;
-          border-radius: 20px;
-          padding: 24px 20px;
-          border: 1px solid #f1f5f9;
-          transition: all 0.3s ease;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
+          background: rgba(255, 255, 255, 0.02);
+          backdrop-filter: blur(12px);
+          border-radius: 24px;
+          padding: 32px 24px;
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          transition: all 0.4s ease;
+          position: relative;
         }
 
         .stat-item:hover {
-          border-color: #6366f1;
-          transform: translateY(-4px);
-          box-shadow: 0 15px 30px -12px rgba(99, 102, 241, 0.15);
+          background: rgba(255, 255, 255, 0.05);
+          border-color: rgba(129, 140, 248, 0.4);
+          transform: translateY(-8px);
         }
 
-        /* Smaller icon container */
         .stat-icon-box {
-          width: 56px;
-          height: 56px;
-          background: #f8fafc;
-          border-radius: 16px;
+          width: 60px;
+          height: 60px;
+          background: linear-gradient(135deg, rgba(22, 18, 85, 0.1), rgba(59, 39, 78, 0.1));
+          border-radius: 18px;
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-bottom: 16px;
-          color: #4f46e5;
-          border: 1px solid #e0e7ff;
-          transition: all 0.3s ease;
+          margin: 0 auto 20px;
+          color: #818cf8;
+          border: 1px solid rgba(129, 140, 248, 0.2);
         }
 
-        .stat-item:hover .stat-icon-box {
-          background: #ffffff;
-          border-color: #6366f1;
-          transform: scale(1.05);
-        }
-
-        .stat-icon-box svg {
-          width: 28px;
-          height: 28px;
-          stroke: #4f46e5;
-          stroke-width: 1.8;
-          fill: none;
-        }
-
-        /* Compact numbers */
         .stat-number {
-          font-size: 36px;
+          font-size: 38px;
           font-weight: 800;
-          margin-bottom: 6px;
-          color: #0f172a;
-          letter-spacing: -1px;
-          line-height: 1;
+          color: #fff;
+          display: block;
+          margin-bottom: 4px;
         }
 
-        /* Tighter label */
         .stat-label {
-          font-size: 13px;
-          line-height: 1.5;
           color: #64748b;
+          font-size: 14px;
           font-weight: 500;
-          max-width: 160px;
-          margin: 0;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
         }
 
-        /* Responsive - optimized for all screens */
-        @media (max-width: 1000px) {
-          .stats-grid { 
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 16px;
-          }
-          
-          .hire-ai-section {
-            padding: 60px 5%;
-          }
+        /* Entrance Animations */
+        .reveal {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+          opacity: 1;
+          transform: translateY(0);
         }
 
+        @media (max-width: 1024px) {
+          .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
         @media (max-width: 640px) {
-          .hire-ai-section { 
-            padding: 50px 5%; 
-          }
-          
-          .hire-ai-content {
-            margin-bottom: 40px;
-          }
-          
-          .stats-grid { 
-            grid-template-columns: 1fr; 
-            max-width: 350px;
-            margin: 0 auto;
-            gap: 16px;
-          }
-          
-          .stat-item { 
-            padding: 20px; 
-            flex-direction: row;
-            text-align: left;
-            gap: 16px;
-          }
-          
-          .stat-icon-box {
-            margin-bottom: 0;
-            width: 48px;
-            height: 48px;
-          }
-          
-          .stat-icon-box svg {
-            width: 24px;
-            height: 24px;
-          }
-          
-          .stat-number {
-            font-size: 32px;
-          }
-          
-          .stat-label {
-            font-size: 12px;
-            max-width: 100%;
-          }
-          
-          .stat-item > div:last-child {
-            flex: 1;
-          }
-          
-          .hire-ai-cta { 
-            width: 100%; 
-            justify-content: center;
-            padding: 12px 28px;
-            font-size: 15px;
-          }
-          
-          .hire-ai-title {
-            font-size: 32px;
-          }
-          
-          .hire-ai-description {
-            font-size: 15px;
-            margin-bottom: 25px;
-          }
+          .stats-grid { grid-template-columns: 1fr; }
+          .neural-bg { width: 400px; height: 400px; }
         }
       `}</style>
 
+      {/* Abstract Neural Mesh SVG */}
+      <div className="neural-bg">
+        <svg viewBox="0 0 200 200" className="mesh-sphere">
+          <defs>
+            <linearGradient id="meshGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#4f46e5" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#c084fc" stopOpacity="0.1" />
+            </linearGradient>
+          </defs>
+          <g fill="none" stroke="url(#meshGrad)" strokeWidth="0.5">
+            {/* Geometric Lines for Sphere Mesh */}
+            <circle cx="100" cy="100" r="80" strokeOpacity="0.2" />
+            <path d="M20,100 Q100,20 180,100 T20,100" />
+            <path d="M100,20 Q180,100 100,180 T100,20" />
+            <path d="M43,43 L157,157" />
+            <path d="M43,157 L157,43" />
+            <ellipse cx="100" cy="100" rx="80" ry="30" />
+            <ellipse cx="100" cy="100" rx="30" ry="80" />
+            {/* Floating Nodes */}
+            {[43, 100, 157].map((x, i) => [43, 100, 157].map((y, j) => (
+              <circle key={`${i}-${j}`} cx={x} cy={y} r="1.5" fill="#818cf8" opacity="0.5">
+                <animate attributeName="r" values="1;2;1" dur="3s" repeatCount="indefinite" begin={`${(i + j) * 0.5}s`} />
+              </circle>
+            )))}
+          </g>
+        </svg>
+      </div>
+
       <div className="hire-ai-container">
-        {/* Content section with reduced spacing */}
-        <div className="hire-ai-content">
+        <div className={`hire-ai-content reveal ${isVisible ? 'active' : ''}`}>
           <div className="hire-ai-badge">
-            <span className="badge-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </span>
-            Global Talent Network
+            <span className="pulse-dot" style={{ width: 8, height: 8, background: '#818cf8', borderRadius: '50%', boxShadow: '0 0 10px #818cf8' }}></span>
+            Next-Gen Talent Acquisition
           </div>
-          
+
           <h2 className="hire-ai-title">
-            Scale with <span className="highlight">Elite Remote</span> <br/>
-            AI Engineering Teams
+            Build Your Future with <br />
+            <span>Silicon-Valley Grade</span> AI Teams
           </h2>
-          
+
           <p className="hire-ai-description">
-            We bridge the gap between world-class AI talent and visionary enterprises. 
-            Start building with vetted, ready-to-deploy professionals.
+            We don't just find engineers; we deploy elite AI squads trained in the latest
+            LLM architectures and neural frameworks. Scale your vision in days, not months.
           </p>
-          
+
           <Link to="/contact" className="hire-ai-cta">
-            Start Hiring Today 
+            Begin Your Deployment
             <span className="cta-arrow">→</span>
           </Link>
         </div>
 
-        {/* Compact Stats Grid */}
         <div className="stats-grid">
-          {/* Stat 1 */}
-          <div className="stat-item">
-            <div className="stat-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+          {[
+            { num: '50+', label: 'Elite AI Architects', icon: 'M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A10.003 10.003 0 0012 3c1.32 0 2.57.255 3.717.72m9.571 2.753c-2.772 1.744-6.054 2.753-9.571 2.753-3.517 0-6.799-1.009-9.571-2.753M9.75 9.75c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75z' },
+            { num: '24/7', label: 'Global Operation', icon: 'M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418' },
+            { num: '99%', label: 'Project Success', icon: 'M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z' },
+            { num: '48h', label: 'Match Guarantee', icon: 'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z' }
+          ].map((stat, i) => (
+            <div
+              key={i}
+              className={`stat-item reveal ${isVisible ? 'active' : ''}`}
+              style={{ transitionDelay: `${0.2 + i * 0.1}s` }}
+            >
+              <div className="stat-icon-box">
+                <svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" style={{ width: 30, height: 30 }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d={stat.icon} />
+                </svg>
+              </div>
+              <span className="stat-number">{stat.num}</span>
+              <span className="stat-label">{stat.label}</span>
             </div>
-            <div>
-              <span className="stat-number">50+</span>
-              <p className="stat-label">Vetted AI experts</p>
-            </div>
-          </div>
-
-          {/* Stat 2 */}
-          <div className="stat-item">
-            <div className="stat-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M2 12H22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <div>
-              <span className="stat-number">5+</span>
-              <p className="stat-label">Countries</p>
-            </div>
-          </div>
-
-          {/* Stat 3 */}
-          <div className="stat-item">
-            <div className="stat-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <div>
-              <span className="stat-number">97%</span>
-              <p className="stat-label">Retention rate</p>
-            </div>
-          </div>
-
-          {/* Stat 4 */}
-          <div className="stat-item">
-            <div className="stat-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <div>
-              <span className="stat-number">~4 Days</span>
-              <p className="stat-label">Quick onboarding</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

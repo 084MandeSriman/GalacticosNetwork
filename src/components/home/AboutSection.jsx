@@ -147,11 +147,11 @@ export default function AboutSection() {
       <style>{`
         .about-section-wrapper {
           position: relative;
-          padding: 120px 6%;
+          padding: clamp(88px, 10vw, 120px) 6%;
           background: #020617; /* Deep Slate Background */
           display: flex;
           align-items: center;
-          gap: 80px;
+          gap: clamp(34px, 5vw, 72px);
           overflow: hidden;
           font-family: 'Inter', sans-serif;
         }
@@ -194,15 +194,15 @@ export default function AboutSection() {
         .visual-container {
           position: relative;
           width: 100%;
-          max-width: 580px;
-          height: 520px;
-          border-radius: 30px;
+          max-width: 560px;
+          height: clamp(420px, 48vw, 500px);
+          border-radius: 26px;
           background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.005) 100%);
           border: 1px solid rgba(255, 255, 255, 0.08);
-          box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+          box-shadow: 0 30px 62px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.1);
           backdrop-filter: blur(20px);
           overflow: hidden;
-          transform: rotateY(8deg) rotateX(5deg);
+          transform: rotateY(6deg) rotateX(4deg);
           transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
@@ -217,7 +217,7 @@ export default function AboutSection() {
           left: 0;
           width: 100%;
           height: 100%;
-          border-radius: 30px;
+          border-radius: 26px;
           z-index: 1;
           pointer-events: auto; /* Allow mouse events */
         }
@@ -237,33 +237,33 @@ export default function AboutSection() {
           background: rgba(15, 23, 42, 0.75);
           backdrop-filter: blur(12px);
           border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 20px;
-          padding: 18px 26px;
+          border-radius: 16px;
+          padding: 14px 18px;
           color: #fff;
           z-index: 3;
           display: flex;
           align-items: center;
-          gap: 16px;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+          gap: 12px;
+          box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
           animation: floatFloat 6s ease-in-out infinite;
         }
 
         .float-card-1 {
-          top: 50px;
-          right: -30px;
+          top: 32px;
+          right: -18px;
           animation-delay: 0s;
         }
 
         .float-card-2 {
-          bottom: 60px;
-          left: -40px;
+          bottom: 42px;
+          left: -24px;
           animation-delay: -3s;
         }
 
         .card-icon {
-          width: 48px;
-          height: 48px;
-          border-radius: 12px;
+          width: 42px;
+          height: 42px;
+          border-radius: 10px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -279,14 +279,14 @@ export default function AboutSection() {
         }
 
         .card-text h4 {
-          font-size: 1.3rem;
+          font-size: 1.12rem;
           font-weight: 800;
           margin: 0 0 2px 0;
           letter-spacing: -0.5px;
         }
 
         .card-text p {
-          font-size: 0.85rem;
+          font-size: 0.78rem;
           color: #94a3b8;
           margin: 0;
           font-weight: 500;
@@ -301,6 +301,7 @@ export default function AboutSection() {
         .about-content-side {
           flex: 1.15;
           z-index: 2;
+          max-width: 650px;
         }
 
         .section-tagline {
@@ -316,7 +317,7 @@ export default function AboutSection() {
           font-size: 0.85rem;
           letter-spacing: 1.5px;
           text-transform: uppercase;
-          margin-bottom: 28px;
+          margin-bottom: 20px;
         }
 
         .pulse-dot {
@@ -335,12 +336,12 @@ export default function AboutSection() {
         }
 
         .about-content-side h2 {
-          font-size: clamp(2.4rem, 4vw, 3.8rem);
+          font-size: clamp(2.2rem, 3.8vw, 3.35rem);
           font-weight: 800;
           color: #fff;
-          line-height: 1.15;
-          margin-bottom: 26px;
-          letter-spacing: -1.5px;
+          line-height: 1.12;
+          margin-bottom: 18px;
+          letter-spacing: -1.2px;
         }
 
         .text-gradient {
@@ -356,43 +357,43 @@ export default function AboutSection() {
         }
 
         .about-content-side > p {
-          font-size: 1.15rem;
+          font-size: 1.04rem;
           color: #94a3b8;
-          line-height: 1.75;
-          margin-bottom: 40px;
-          max-width: 95%;
+          line-height: 1.7;
+          margin-bottom: 28px;
+          max-width: 92%;
         }
 
         /* Features Modern Grid */
         .aesthetic-features {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 24px;
-          margin-bottom: 50px;
+          gap: 16px;
+          margin-bottom: 36px;
         }
 
         .feature-box {
           display: flex;
           align-items: flex-start;
-          gap: 16px;
-          padding: 22px;
+          gap: 12px;
+          padding: 18px;
           background: rgba(255, 255, 255, 0.015);
           border: 1px solid rgba(255, 255, 255, 0.04);
-          border-radius: 20px;
+          border-radius: 16px;
           transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .feature-box:hover {
           background: rgba(255, 255, 255, 0.03);
           border-color: rgba(0, 195, 255, 0.3);
-          transform: translateY(-6px);
-          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+          transform: translateY(-4px);
+          box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
         }
 
         .f-icon-wrap {
-          width: 42px;
-          height: 42px;
-          border-radius: 10px;
+          width: 38px;
+          height: 38px;
+          border-radius: 9px;
           background: rgba(0, 195, 255, 0.08);
           display: flex;
           align-items: center;
@@ -403,7 +404,7 @@ export default function AboutSection() {
 
         .f-text h5 {
           color: #f1f5f9;
-          font-size: 1.1rem;
+          font-size: 1rem;
           font-weight: 700;
           margin: 0 0 6px 0;
           letter-spacing: -0.3px;
@@ -411,8 +412,8 @@ export default function AboutSection() {
 
         .f-text p {
           color: #64748b;
-          font-size: 0.95rem;
-          line-height: 1.5;
+          font-size: 0.9rem;
+          line-height: 1.45;
           margin: 0;
         }
 
@@ -421,17 +422,17 @@ export default function AboutSection() {
           display: inline-flex;
           align-items: center;
           gap: 12px;
-          padding: 18px 42px;
+          padding: 14px 30px;
           background: linear-gradient(135deg, #00c3ff 0%, #0066ff 100%);
           color: #fff;
-          font-size: 1.05rem;
+          font-size: 0.98rem;
           font-weight: 700;
           text-decoration: none;
           border-radius: 100px;
           transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
           position: relative;
           overflow: hidden;
-          box-shadow: 0 10px 30px rgba(0, 195, 255, 0.25);
+          box-shadow: 0 9px 24px rgba(0, 195, 255, 0.24);
         }
 
         .cta-btn::before {
@@ -444,8 +445,8 @@ export default function AboutSection() {
         }
 
         .cta-btn:hover {
-          transform: translateY(-5px) scale(1.03);
-          box-shadow: 0 15px 40px rgba(0, 195, 255, 0.4);
+          transform: translateY(-3px) scale(1.02);
+          box-shadow: 0 13px 32px rgba(0, 195, 255, 0.34);
         }
 
         .cta-btn:hover::before {
@@ -464,13 +465,14 @@ export default function AboutSection() {
         @media (max-width: 1100px) {
           .about-section-wrapper {
             flex-direction: column;
-            padding: 100px 5%;
+            padding: 88px 5% 82px;
             text-align: center;
+            gap: 34px;
           }
           
           .about-visual-side {
             width: 100%;
-            margin-bottom: 60px;
+            margin-bottom: 14px;
           }
 
           .visual-container {
@@ -481,22 +483,46 @@ export default function AboutSection() {
             transform: translateY(-10px);
           }
 
-          .float-card-1 { right: -10px; }
-          .float-card-2 { left: -10px; }
+          .float-card-1 { right: -6px; }
+          .float-card-2 { left: -6px; }
           .float-card { padding: 14px 20px; }
 
-          .section-tagline { margin: 0 auto 28px; }
-          .about-content-side > p { margin: 0 auto 40px; }
+          .section-tagline { margin: 0 auto 18px; }
+          .about-content-side > p { margin: 0 auto 26px; max-width: 86%; }
           .aesthetic-features { text-align: left; }
         }
 
         @media (max-width: 768px) {
+          .about-section-wrapper {
+            padding: 72px 5% 68px;
+            gap: 24px;
+          }
+
+          .visual-container {
+            height: 380px;
+            border-radius: 20px;
+          }
+
+          .glass-canvas {
+            border-radius: 20px;
+          }
+
           .aesthetic-features {
             grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 28px;
           }
           
           .about-content-side h2 {
-            font-size: 2.2rem;
+            font-size: 1.95rem;
+            line-height: 1.2;
+            margin-bottom: 14px;
+          }
+
+          .about-content-side > p {
+            font-size: 0.98rem;
+            margin-bottom: 22px;
+            max-width: 100%;
           }
           
           .float-card {

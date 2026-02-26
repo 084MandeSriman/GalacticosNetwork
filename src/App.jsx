@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 // Main Pages
 import Home from "./pages/Home";
 import AboutUs from "./components/AboutUs";
+import Expertise from "./pages/Expertise";
 import Investors from "./pages/Investors";
 import Careers from "./pages/Careers";
 import ContactUs from "./pages/ContactUs";
@@ -23,6 +24,7 @@ import CloudSaaS from "./pages/services/CloudSaaS";
 import QualityEngineering from "./pages/services/QualityEngineering";
 import UiUx from "./pages/services/UiUx";
 import Mobility from "./pages/services/Mobility";
+import ERP from "./pages/services/erp";
 
 // Application Engineering Sub-services
 import Transformations from "./pages/services/Transformations";
@@ -97,42 +99,43 @@ import ScrollToTop from "./components/ScrollToTop";
 export default function App() {
   return (
     <>
-    <ScrollToTop/>
+      <ScrollToTop />
       <Navbar />
 
       <Routes>
         {/* MAIN ROUTES */}
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/expertise" element={<Expertise />} />
         <Route path="/investors" element={<Investors />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/services/saas/mulesoft" element={<MuleSoft />} />
-<Route path="/services/qa/playwright" element={<Playwright />} />
-<Route path="/services/qa/automation" element={<AutomationTesting />} />
+        <Route path="/services/qa/playwright" element={<Playwright />} />
+        <Route path="/services/qa/automation" element={<AutomationTesting />} />
 
-        
+
         <Route path="/services/qa/performance" element={<PerformanceTesting />} />
         <Route path="/services/data/kafka" element={<Kafka />} />
-<Route path="/services/devops/k8s" element={<Kubernetes />} />
+        <Route path="/services/devops/k8s" element={<Kubernetes />} />
 
-<Route path="/services/devops/azure" element={<Azure />} />
+        <Route path="/services/devops/azure" element={<Azure />} />
 
- <Route path="/services/ux/strategy" element={<UXStrategy />} /> 
-         <Route path="/services/ux/frontend" element={<Frontend />} />
-                 <Route path="/services/ui-ux/design-systems" element={<DesignSystems />} />
-
-
-<Route path="/services/ux/systems" element={<DesignSystems />} />
-javascript
-<Route path="/services/ux/accessibility" element={<DesignSystems />} />
-javascript
-<Route path="/services/mobility/cross" element={<CrossPlatform />} />
-javascript
-<Route path="/services/mobility/ui" element={<UiUx />} />
+        <Route path="/services/ux/strategy" element={<UXStrategy />} />
+        <Route path="/services/ux/frontend" element={<Frontend />} />
+        <Route path="/services/ui-ux/design-systems" element={<DesignSystems />} />
 
 
-        
+        <Route path="/services/ux/systems" element={<DesignSystems />} />
+        javascript
+        <Route path="/services/ux/accessibility" element={<DesignSystems />} />
+        javascript
+        <Route path="/services/mobility/cross" element={<CrossPlatform />} />
+        javascript
+        <Route path="/services/mobility/ui" element={<UiUx />} />
+
+
+
         {/* CASE STUDIES */}
         <Route
           path="/case-study/digital-transformation"
@@ -158,7 +161,7 @@ javascript
           path="/case-study/smarter-business-solutions"
           element={<SmarterBusinessSolutions />}
         />
-        
+
 
         {/* SERVICES */}
         <Route path="/services/application-engineering" element={<ApplicationEngineering />} />
@@ -169,6 +172,7 @@ javascript
         <Route path="/services/quality-engineering" element={<QualityEngineering />} />
         <Route path="/services/ui-ux" element={<UiUx />} />
         <Route path="/services/mobility" element={<Mobility />} />
+        <Route path="/services/erp" element={<ERP />} />
 
         {/* APPLICATION ENGINEERING SUB-SERVICES */}
         <Route path="/services/app-eng/transformations" element={<Transformations />} />
@@ -181,10 +185,10 @@ javascript
         <Route path="/services/app-eng/angular" element={<Angular />} />
         <Route path="/services/data/etl" element={<ETL />} />
         <Route path="/services/data/warehousing" element={<Warehousing />} />
-      
-<Route path="/services/data/etl" element={<ETL />} />
-<Route path="/services/data/warehousing" element={<Warehousing />} />
-<Route path="/services/data/airflow" element={<Airflow />} />
+
+        <Route path="/services/data/etl" element={<ETL />} />
+        <Route path="/services/data/warehousing" element={<Warehousing />} />
+        <Route path="/services/data/airflow" element={<Airflow />} />
 
 
         {/* CLOUD SAAS SUB-SERVICES */}

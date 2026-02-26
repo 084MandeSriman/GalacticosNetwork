@@ -2,58 +2,118 @@ import React from 'react';
 
 export default function CookiePolicy() {
   return (
-    <div className="terms-wrapper">
+    <div className="cp-root">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        .terms-wrapper {
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        .cp-root {
           font-family: 'Inter', sans-serif;
-          background: linear-gradient(135deg, #ffffff 0%, #f9fafc 100%);
+          background: #03080f;
           min-height: 100vh;
-          padding: 60px 20px;
-          display: flex;
-          justify-content: center;
-          align-items: flex-start;
-          color: #1e293b;
+          color: #fff;
+          overflow-x: hidden;
+          position: relative;
         }
-        .terms-container {
-          max-width: 900px;
-          width: 100%;
-          background: rgba(255, 255, 255, 0.9);
-          backdrop-filter: blur(10px);
-          border-radius: 32px;
-          padding: 50px 60px;
-          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-          border: 1px solid rgba(99, 102, 241, 0.1);
+        .cp-root::before {
+          content: '';
+          position: fixed; inset: 0; pointer-events: none; z-index: 0;
+          background:
+            radial-gradient(ellipse 55% 50% at 0% 0%, rgba(99,102,241,0.1) 0%, transparent 65%),
+            radial-gradient(ellipse 45% 45% at 100% 100%, rgba(14,165,233,0.08) 0%, transparent 65%);
         }
-        .terms-container h1 {
+
+        /* ── HERO ── */
+        .cp-hero {
+          position: relative; z-index: 2;
+          padding: 100px 8% 80px;
+          border-bottom: 1px solid rgba(255,255,255,0.06);
+          display: flex; flex-direction: column;
+        }
+
+        .cp-hero-label {
+          font-size: 11px; font-weight: 600;
+          letter-spacing: 0.22em; text-transform: uppercase;
+          color: rgba(255,255,255,0.35);
+          margin-bottom: 28px;
+          display: flex; align-items: center; gap: 12px;
+        }
+        .cp-hero-label::before {
+          content: '';
+          display: inline-block; width: 32px; height: 1px;
+          background: rgba(255,255,255,0.25);
+        }
+
+        .cp-hero h1 {
           font-size: 42px;
-          font-weight: 700;
-          margin: 0 0 20px;
-          background: linear-gradient(145deg, #4f46e5 0%, #0891b2 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          letter-spacing: -0.5px;
-          border-bottom: 2px solid rgba(99, 102, 241, 0.2);
-          padding-bottom: 20px;
+          font-weight: 700; line-height: 1.2;
+          letter-spacing: -0.5px; color: #fff;
+          max-width: 700px; margin-bottom: 32px;
         }
-        .terms-container p {
-          font-size: 16px;
-          line-height: 1.7;
-          color: #334155;
-          margin: 0 0 20px;
+        .cp-hero h1 em {
+          font-style: normal;
+          background: linear-gradient(90deg, #818cf8, #38bdf8);
+          -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
-        @media (max-width: 768px) {
-          .terms-container { padding: 30px 25px; }
-          .terms-container h1 { font-size: 32px; }
+
+        .cp-hero-meta {
+          display: flex; gap: 40px; flex-wrap: wrap;
+        }
+        .cp-meta-item {
+          display: flex; flex-direction: column; gap: 4px;
+        }
+        .cp-meta-key {
+          font-size: 11px; font-weight: 500;
+          letter-spacing: 0.14em; text-transform: uppercase;
+          color: rgba(255,255,255,0.28);
+        }
+        .cp-meta-val {
+          font-size: 16px; font-weight: 400;
+          color: rgba(255,255,255,0.75);
+        }
+
+        /* ── BODY ── */
+        .cp-body {
+          position: relative; z-index: 1;
+          padding: 60px 8%;
+        }
+        .cp-body p {
+          font-size: 16px; line-height: 1.7;
+          color: rgba(255,255,255,0.5);
+          max-width: 780px;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+          .cp-hero { padding: 70px 6% 60px; }
+          .cp-hero h1 { font-size: 32px; }
+          .cp-body { padding: 52px 6%; }
+        }
+        @media (max-width: 580px) {
+          .cp-hero { padding: 60px 5% 50px; }
+          .cp-body { padding: 40px 5%; }
         }
       `}</style>
-      <div className="terms-container">
-        <h1>Cookie Policy</h1>
-        <p>This website uses cookies to enhance your browsing experience, analyze site traffic, and personalize content. By continuing to use our site, you consent to our use of cookies.</p>
-        <p>Cookies are small text files stored on your device. You can control cookie settings through your browser preferences. Disabling cookies may affect certain functionalities of the site.</p>
-        <p>We use both session and persistent cookies for essential site operations and analytics. Third-party services may also set cookies for advertising or analytics purposes.</p>
-        {/* Add full cookie policy text as needed */}
+
+      {/* HERO */}
+      <header className="cp-hero">
+        <div className="cp-hero-label">Legal Documentation</div>
+        <h1>Cookie <em>Policy</em></h1>
+        <div className="cp-hero-meta">
+          <div className="cp-meta-item">
+            <span className="cp-meta-key">Entity</span>
+            <span className="cp-meta-val">Galacticos Network</span>
+          </div>
+        </div>
+      </header>
+
+      {/* BODY */}
+      <div className="cp-body">
+        <p>
+          This website uses cookies to enhance your browsing experience, analyze site traffic, and personalize content. By continuing to use our site, you consent to our use of cookies. Cookies are small text files stored on your device. You can control cookie settings through your browser preferences. Disabling cookies may affect certain functionalities of the site. We use both session and persistent cookies for essential site operations and analytics. Third-party services may also set cookies for advertising or analytics purposes.
+        </p>
       </div>
+
     </div>
   );
 }
